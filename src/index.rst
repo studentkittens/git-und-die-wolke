@@ -52,6 +52,8 @@ Git als Storage Service
 |
 |
 
+.. rst-class:: build
+
 - Git-annex - git als ``Dropbox`` nutzen
 - Verschiedene Backends möglich 
   
