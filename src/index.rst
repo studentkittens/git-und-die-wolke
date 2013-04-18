@@ -64,6 +64,9 @@ Git als Storage Service
 Github
 ------
 
+
+.. rst-class:: build
+
 - Platzhirsch in Punkto Code-Hosting
 - Freie Repository für Open-Source Projekte.
 - Integration in andere Cloud-Dienste via ``git hooks``:
@@ -81,6 +84,50 @@ Github
 |
 
 
+.. rst-class:: build
+
 - Wird eine Überraschung ☺
 - (LEDs are possible)
 - Gitosis kommt auch vor.
+
+
+Zeitplan
+--------
+
+- Zeitplan aufzeigen
+- Git Cheat-Sheet austeilen
+
+
+ca 45 Min
+---------
+
+- 5 Min, warum und was ist git und wie passt das in die Wolke
+- Git Repo anlegen und erläutern (Theorie + Interaktiv)
+- 5 Min Pause
+
+ca 15 Min (50 Min)
+------------------
+- Kurzer Ausblick -> Git als Speicherdienst
+
+
+70 Min (65 Min)
+---------------
+- Github -> Git in der Wolke
+- Fork, Pull Requests, Metriken
+- Github hooks
+  - Buildhook
+  - TravisCI
+  - ReadTheDocs
+  - Twitter
+  - Bugzilla
+  - Metriken 
+  - Email-Hook
+- Github API 
+- 15 Min Pause
+
+30 Min (Praxisübungen und Fragestunde)
+--------------------------------------
+- Github Organisation -> Konten anlegen -> pushen -> Raspberry leuchtet
+- Mit einer Hochschulkonformen-Sprache Beispielprojekt -> MakeTest -> Ampel ->
+  Email an Projektleiter Schaible
+ Mit gource git repo visualisieren.
