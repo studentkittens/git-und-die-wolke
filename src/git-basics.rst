@@ -5,9 +5,123 @@ Git Basics: Ab in die Shell
 .. figure:: /_static/gitcloud.png
    :class: fill
 
+--------------
+ Was ist git?
+--------------
+
+    * Ein Versionsverwaltungssystem
+    * Ein Protokoll
+    * Ein abstraktes Filesystem
+    * Linus: ``A distributed stupid content tracker``
+
+**Was ist es nicht?**
+
+    * CVS (``WWCVSND``)
+    * SVN (``CVS done right.``)
+
+**Erklärung:**
+
+      http://www.youtube.com/watch?v=4XpnKHJAok8
+
+--------------
+``git init``
+--------------
+
+* Lege ein neues Git-Repository in ``your-repo`` an.
+
+.. code-block:: bash
+
+    $ mkdir your-repo && cd your-repo
+    $ git init .
+    $ ls --all
+    .  ..  .git
+    $ tree .git
+    .git
+    ├── branches
+    ├── config
+    ├── HEAD
+    ├── index
+    ├── [...]
+    ├── logs
+    │   ├── HEAD
+    │   └── refs
+    ├── objects
+    └── refs
+
+--------------
+``git clone``
+--------------
+
+* Klone ein Repository
+
+.. code-block:: bash
+
+    $ git clone git://github.com/studentkittens/git-und-die-wolke.git
+
+    Cloning into 'git-und-die-wolke'...
+    remote: Counting objects: 94, done.
+    remote: Compressing objects: 100% (72/72), done.
+    remote: Total 94 (delta 36), reused 72 (delta 16)
+    Receiving objects: 100% (94/94), 5.70 MiB | 1.60 MiB/s, done.
+    Resolving deltas: 100% (36/36), done.
+
+* Url-Shema Beispiele: ::
+   
+     git://github.com/qitta/foozel.git         → Git [Read only]
+     git@github.com:sahib/rmlint.git           → SSH [Preferred]
+     https://github.com/tmarc/advanced-ios.git → HTTPS [Notlösung]
+     git clone file:///opt/git/project.git     → Lokal 
 
 
+-----------
+``git add``
+-----------
 
+.. code-block:: bash
+
+   $ git add [your-file-or-dir-here]
+
+.. image:: /_static/untracked_to_staged.png
+   :align: center
+
+[Noch] Einfacher dargestellt:
+
+    http://ndpsoftware.com/git-cheatsheet.html
+
+
+--------------
+``git commit``
+--------------
+
+.. code-block:: bash
+
+   $ echo "Hello Phil!" > README
+   $ git add README
+
+.. code-block:: bash
+
+   $ git status
+   # On branch master
+   # Changes to be committed:
+   #   new file:   README
+
+.. code-block:: bash
+
+   $ git commit --all --message "commit message"  # ausgechrieben
+   $ git commit -am "commit message"              # oder kürzer
+   $ git commit -a                                # lange messages
+   [Editor öffnet sich]
+
+.. code-block:: bash
+
+   $ git status
+   # On branch master
+   nothing to commit, working directory clean
+
+
+------------
+``git diff``
+------------
 
 
 -----------------
