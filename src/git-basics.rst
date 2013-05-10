@@ -160,13 +160,13 @@ Früher oder später will man etwas berichtigen
 ``git remote #2``
 -----------------
 
-Anders beim Dezentralen:
+Und jetzt dezentral:
 
 .. image:: /_static/decentral.png
     :align: center
-    :width: 80%
+    :width: 70%
 
- -----------------
+-----------------
 ``git remote #3``
 -----------------
 
@@ -174,11 +174,24 @@ Und jetzt in ``Git-Speak``?
 
 .. code-block:: bash
 
+    # Alle remotes auflisten
     $ git remote -v
     origin  git@github.com:studentkittens/git-und-die-wolke.git (fetch)
     origin  git@github.com:studentkittens/git-und-die-wolke.git (push)
+
+.. code-block:: bash
+
+    # Neues remote adden
+    $ git remote add nullcat git@nullcat.de
+    $ git remote -v
+    …
     nullcat git@nullcat.de (fetch)
     nullcat git@nullcat.de (push)
+
+.. code-block:: bash
+
+    # Bestehendes remote verändern
+    $ git remote set-url nullcat https://git.nullcat.de
 
 -----------------
 ``git bisect #1``
