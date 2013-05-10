@@ -160,7 +160,7 @@ Früher oder später will man etwas berichtigen
 ``git remote #2``
 -----------------
 
-- Anders beim Dezentralen:
+Anders beim Dezentralen:
 
 .. image:: /_static/decentral.png
     :align: center
