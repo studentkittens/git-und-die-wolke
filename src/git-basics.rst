@@ -89,9 +89,9 @@ Git Basics: Ab in die Shell
     http://ndpsoftware.com/git-cheatsheet.html
 
 
---------------
-``git commit``
---------------
+-----------------
+``git commit #1``
+-----------------
 
 .. code-block:: bash
 
@@ -118,11 +118,67 @@ Git Basics: Ab in die Shell
    # On branch master
    nothing to commit, working directory clean
 
+-----------------
+``git commit #2``
+-----------------
 
-------------
-``git diff``
-------------
+Früher oder später will man etwas berichtigen
 
+.. code-block:: bash
+
+    # Letzte commit messages berichtigen
+    # to amend == berichtigen.
+    $ git commit --amend
+
+.. code-block:: bash
+
+    # änderungen an einem file zurücksetzen
+    # Working Tree -> Unmodified
+    git checkout -- your_file.txt
+
+.. code-block:: bash
+
+    # "git add" rückgängig machen
+    # Index -> Working Tree
+    git reset your_file.txt
+
+
+-----------------
+``git remote #1``
+-----------------
+   
+.. rst-class:: build
+
+- Bis jetzt passierte alles lokal.
+- Bis auf ``git clone``.
+
+.. image:: /_static/central.png
+    :align: center
+    :width: 70%
+
+-----------------
+``git remote #2``
+-----------------
+
+- Anders beim Dezentralen:
+
+.. image:: /_static/decentral.png
+    :align: center
+    :width: 80%
+
+ -----------------
+``git remote #3``
+-----------------
+
+Und jetzt in ``Git-Speak``?
+
+.. code-block:: bash
+
+    $ git remote -v
+    origin  git@github.com:studentkittens/git-und-die-wolke.git (fetch)
+    origin  git@github.com:studentkittens/git-und-die-wolke.git (push)
+    nullcat git@nullcat.de (fetch)
+    nullcat git@nullcat.de (push)
 
 -----------------
 ``git bisect #1``
