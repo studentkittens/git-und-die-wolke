@@ -81,6 +81,8 @@ Kitteh:
 - Workflows
 - 15 Min Pause
 
+(⬯⎵⬯)
+
 30 Min (Praxisübungen und Fragestunde)
 --------------------------------------
 - Github Organisation -> Konten anlegen -> pushen -> Raspberry leuchtet

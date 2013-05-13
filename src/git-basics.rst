@@ -88,7 +88,6 @@ Git Basics: Ab in die Shell
 
     http://ndpsoftware.com/git-cheatsheet.html
 
-
 -----------------
 ``git commit #1``
 -----------------
@@ -142,6 +141,26 @@ Früher oder später will man etwas berichtigen
     # Index -> Working Tree
     git reset your_file.txt
 
+----------------------
+Die Objektdatenbank #1
+----------------------
+
+Drei unterschiedliche Objektypen: 
+
+* Blobs
+* Trees
+* Commits
+
+.. image:: /_static/simple_tree.png
+   :align: center
+
+----------------------
+Die Objektdatenbank #2
+----------------------
+
+.. image:: /_static/simple_commit.png
+   :align: center
+   :width: 100%
 
 -----------------
 ``git remote #1``
@@ -193,11 +212,22 @@ Und jetzt in ``Git-Speak``?
     # Bestehendes remote verändern
     $ git remote set-url nullcat https://git.nullcat.de
 
+--
+……
+--
+
+.. figure:: /_static/af.jpg
+   :class: fill
+
+-------------
+``git fetch``
+-------------
+
+TODO
+
 -----------------
 ``git bisect #1``
 -----------------
-
-Aus ``man git-bisect``: 
 
     ``Find by binary search the change that introduced a bug``
 
@@ -282,6 +312,11 @@ Was lernt man draus?
     * ``git bisect`` ist ein gutes Argument für Unit-Tests.
 
 \* (*Noch mehr davon:* http://whatthecommit.com/)
+
+--------------
+``git rebase``
+--------------
+
 
 
 --------------

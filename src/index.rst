@@ -15,6 +15,5 @@ Inhalt
    :maxdepth: 1
 
    git-basics 
-   git-hooks
    git-annex
-   gitolite
+   github
