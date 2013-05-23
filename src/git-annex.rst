@@ -1,6 +1,6 @@
-============================
-Git Annex: Dropbox für Harte
-============================
+=============================
+Git Annex: Dropbox fuer Harte
+=============================
 
 .. figure:: /_static/gitcloud.png
    :class: fill
@@ -15,16 +15,15 @@ git annex - a wrapper around git
    :width: 400px
 
 
-
 ------------------
 Was ist git-annex?
 ------------------
 
 **Problem:**
 
-    * git eignet sich aufgrund seiner Funktionsweise nur bedingt für große
+    * Git eignet sich aufgrund seiner Funktionsweise nur bedingt für große
       Dateien
-    * großen Dateien -> hoher Ressourcenverbrauch
+    * Großen Dateien → hoher Ressourcenverbrauch
 
 .. image:: /_static/annex.png
    :align: center
@@ -36,8 +35,8 @@ Was ist git-annex?
 
 **Abhilfe: annex**
     
-    * ein wrapper um git herum, der git ,,aufbohrt''
-    * nur Metadaten werden verwaltet 
+    * Ein wrapper um git herum, der git ,,aufbohrt''
+    * Nur Metadaten werden verwaltet 
     * Content wird nicht ,,getrackt'', dennoch sind git features für das
       Filemanagement weiterhin verfügbar und ,,nice''
 
@@ -50,12 +49,12 @@ Was ist git-annex?
 git annex features
 ------------------
 
-    * location tracking
-    * future proofing
-    * backup copies
-    * special remotes
-    * transfering data
-    * distributed version control
+    * Location Tracking
+    * Future Proofing
+    * Backup Copies
+    * Special Remotes
+    * Transfering Data
+    * Distributed Version Control
 
 .. image:: /_static/annex.png
    :align: center
@@ -65,14 +64,14 @@ git annex features
 Alles okay?
 -----------
 
-**nnnjjjjjjjjjaaaaa**
+**njaaaa**
     
-    * noch recht stark in der Entwicklung
-    * im moment hauptsächlich was für geeks
+    * Noch recht stark in der Entwicklung
+    * Im moment hauptsächlich was für Geeks
     
 **Aber**
 
-    * Abhilfe in Arbeit -> Webfrontend
+    * Abhilfe in Arbeit →  Webfrontend
 
 
 -------------------------------------------
@@ -81,25 +80,32 @@ Warum überhaupt das Ganze, es gibt Dropbox?
 
 **Interessante Features die es bisher so nicht gibt**
 
-    * verschiedene ,,cloud remotes'' nutzbar z.B. Box.com, Rsync.net, Amazon S3
-    * kontrolle liegt beim Benutzer, nicht Storage anbieter - interessant für
-      Unternehmen mit kritischen Daten?
-    * Verschlüsselung, Vertrauensstufen, Sharing etc.
-    * Verschiedene ,,Repository Groups'' definierbar und kombinierbar ->
-      verschiedene Szenarien abdeckbar 
-    * praktisch viele Features die man von einer gutem storagelösung erwartet
+    * Verschiedene ,,cloud remotes'' nutzbar z.B. Box.com, Rsync.net, Amazon S3
+    * Kontrolle liegt beim Benutzer, nicht Storage anbieter - interessant für
+      unternehmen mit kritischen Daten.
+    * verschlüsselung, Vertrauensstufen, Sharing etc.
+    * verschiedene ,,Repository Groups'' definierbar und kombinierbar → 
+      verschiedene Szenarien abdeckbar.
+    * Praktisch viele Features die man von einer gutem storagelösung erwartet
 
 
----------------------------------
-power of git annex for everybody?
----------------------------------
+--------------------------------
+Power of git-annex for everybody
+--------------------------------
 
 |
 |
 |
 |
-        ** Frontend Demo + Dropbox usage video **
+|
+|
 
+.. raw:: html
+
+    <center><b>Frontend Demo + Dropbox usage video</b></center>
+
+|
+|
 
 .. image:: /_static/annex.png
    :align: center

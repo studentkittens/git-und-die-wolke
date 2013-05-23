@@ -74,7 +74,16 @@ Demo: Organisationen
 
 - Ein leichter Weg um Teams zu organisieren.
 - Eine **Organisation** ist ein eigenständiger Nutzer.
-- 
+- Grundlegender Ansatz bei Entwicklung mit mehreren Personen
+  
+**Features:**
+
+Verwaltung von...
+
+- Membern (ein GitHub User entspricht einem Member)
+- Teams (Anlegen) 
+- Rechten (Push, Pull, Admin)
+
 
 Demo: Sonstiges #1
 ------------------
@@ -90,7 +99,7 @@ Demo: Sonstiges #1
 
 - **Downloads:**
 
-    - Gepushte Tags werden als Download_ angeboten.
+    - Gepushte Tags werden zu Downloads_.
     - Beispiel: Anlegen von ``1.2.0rc1``:
 
     .. code-block:: bash
@@ -98,11 +107,9 @@ Demo: Sonstiges #1
         $ git tag 1.2.0rc1
         $ git push origin 1.2.0rc1
 
-    - 
-regel
 .. _Beispiel: https://github.cngstom/sahib/glyr/contributors
 .. _Bugtracker: https://github.com/sahib/glyr/issues
-.. _Download: https://github.com/sahib/glyr/tags
+.. _Downloads: https://github.com/sahib/glyr/tags
 
 Demo: Sonstiges #2
 ------------------
@@ -125,15 +132,49 @@ Demo: Sonstiges #2
 ``git hooks``
 -------------
 
+- Mechnismus um wichtige git-commandos einzuhacken 
+- Meist kleine Shell-Scripte:
 
-Demo: Hooks
-------------
+.. code-block:: bash
+
+    $ echo "echo I am a hook." > .git/hooks/pre-commit
+    $ git commit -am "some message"
+    I am a hook.
+    # Auf Zweig master
+    # Ihr Zweig ist vor 'origin/master' um 3 Versionen.
+    # ...
+
+- Hooks werden durch bestimmte Namen identifiziert
+    
+    - ``pre-commit, prepare-commit-msg, commit-msg, post-commit``
+    - ``pre-receive, update``
+
+
+Demo: Cloud-Hooks
+-----------------
   
-  - Twitter (https://twitter.com/cloudkittens)
-  - TravisCI
-  - ReadTheDocs
+  - Twitter_ 
 
-  - Buildhook
-  - Bugzilla
-  - Metriken 
-  - Email-Hook
+       Commit Messages auf Twitter posten.
+
+  - TravisCI_ 
+
+        ``make && make test``
+
+  - ReadTheDocs_ 
+
+        Generierung von Dokumentation.
+
+  - Bugzilla_ 
+
+        Linking von Bugs in Commit Message.
+
+  - Email_
+
+        Bei Commit Email an Mailingliste schicken.
+
+.. _Twitter: https://twitter.com/cloudkittens
+.. _TravisCI: https://travis-ci.org
+.. _ReadTheDocs: https://readthedocs.org/
+.. _Bugzilla: http://bugzilla.org
+.. _Email: http://de.wikipedia.org/wiki/E-Mail

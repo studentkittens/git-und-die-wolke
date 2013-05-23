@@ -162,6 +162,14 @@ Die Objektdatenbank #2
    :align: center
    :width: 100%
 
+----------------------
+Die Objektdatenbank #3
+----------------------
+
+.. image:: /_static/simple_branch.png
+   :align: center
+   :width: 100%
+
 -----------------
 ``git remote #1``
 -----------------
@@ -212,6 +220,25 @@ Und jetzt in ``Git-Speak``?
     # Bestehendes remote verändern
     $ git remote set-url nullcat https://git.nullcat.de
 
+------------
+``git push``
+------------
+
+.. code-block:: bash
+
+    $ git push [<remote> [<local-branch>]]
+
+.. code-block:: bash
+
+    $ git push
+    $ git push origin
+    $ git push origin master
+    
+
+.. image:: /_static/push.jpg
+    :align: center
+    :width: 55%
+
 --
 ……
 --
@@ -219,11 +246,26 @@ Und jetzt in ``Git-Speak``?
 .. figure:: /_static/af.jpg
    :class: fill
 
+
 -------------
 ``git fetch``
 -------------
 
-TODO
+.. rst-class:: build
+
+- ``git pull`` ist ein ``git fetch && git merge``.
+- Warum sollte man das wollen?
+- Wenn man nicht will dass automatisch gemerged wird.
+- Beispiel: 
+
+  .. code-block:: bash
+
+    $ git fetch origin 
+    $ git checkout origin/master
+    $ # look around
+    $ # if satisfied:
+    $ git checkout master
+    $ git merge origin/master
 
 -----------------
 ``git bisect #1``
@@ -313,16 +355,114 @@ Was lernt man draus?
 
 \* (*Noch mehr davon:* http://whatthecommit.com/)
 
---------------
-``git rebase``
---------------
+---------
+Workflows
+---------
 
 
+.. image:: /_static/workflow.png
+    :align: center
+    :width: 110%
 
---------------
-Best Practices
---------------
+-------
+Tooling
+-------
 
-- .gitignore
-- kein autogen
-- ...
+**Plugins**
+
+* GVim Fugitive Plugin
+* Eclipse EGit
+* Netbeans (bereits integriert)
+
+|
+
+**Standalone Tools**
+
+* gitg (Linux Gnome)
+* tig (Linux ncurses)
+* gitk (bereits in git enthalten)
+
+
+-----------------
+Best Practices #1
+-----------------
+
+.. rst-class:: build
+
+- ``.gitignore`` nutzen.
+  
+    - Keinen autogenerierten Code/Projektdateien committen.
+    - Wenn nicht vermeidbar dann in eigenen Commit.
+    - Für Dokumentation am besten eigenen Branch nutzen!
+
+- Sinnvolle commit messages.
+
+    - Siehe Folie für ``git bisect 4``.
+
+
+-----------------
+Best Practices #2
+-----------------
+
+.. rst-class:: build
+
+- Ein Feature == Ein Commit.
+
+    - Macht Debugging/Übersicht einfacher.
+
+- Review Code before Commit.
+
+    - Keine ``Fixed up previous commit`` Messages.
+
+- Branches für Features nutzen.
+
+    - Damit der ``master`` branch benutzbar bleibt.
+
+-----------------
+``git rebase #1``
+-----------------
+
+Ausgangszustand:
+
+.. image:: /_static/gitrebase-1.png
+    :align: center
+    :width: 80%
+
+-----------------
+``git rebase #2``
+-----------------
+
+Ohne Rebase, mit ``git merge``:
+
+.. code-block:: bash
+
+    $ git checkout master 
+    $ git merge experiment
+
+.. image:: /_static/gitrebase-2.png
+    :align: center
+    :width: 80%
+
+-----------------
+``git rebase #3``
+-----------------
+
+Mit Rebase: 
+
+.. code-block:: bash
+
+    $ git checkout experiment
+    $ git rebase master
+    $ git checkout master
+    $ git merge ex
+
+.. image:: /_static/gitrebase-3.png
+    :align: center
+    :width: 90%
+
+---
+...
+---
+
+.. figure:: /_static/thanksobama.jpg
+   :class: fill
