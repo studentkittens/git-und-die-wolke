@@ -50,6 +50,19 @@
     border-top-right-radius: 10px;
 }
 
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-height: 740px;
+    background: #99ccff;
+    background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#99ccff), to(#336699));
+    background: -webkit-radial-gradient(#99ccff, #336699);
+    background:    -moz-radial-gradient(#99ccff, #336699);
+    background:     -ms-radial-gradient(#99ccff, #336699);
+    background:      -o-radial-gradient(#99ccff, #336699);
+    background:         radial-gradient(#99ccff, #336699);    
+}
+
 ul li:before {
     content: '±  ';
     font-size:75%;
