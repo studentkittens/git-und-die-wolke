@@ -5,6 +5,12 @@ Github: Ab in die Wolke
 .. figure:: /_static/gitcloud.png
    :class: fill
 
+---------------
+Was ist Github?
+---------------
+
+TODO
+
 ----------------
 Was kann Github?
 ----------------
@@ -40,7 +46,7 @@ Demo: Fork
 ----------
 
 - Ein Fork ist ein ``git clone`` mit anderen Namen.
-- Man klont ``user_a/repo.git`` zu ``user_b/repo.git``.
+- Man klont ``alice/example.git`` zu ``bob/example.git``.
 - Dann macht man den Code den man geforkt hat kaputt.
 - Wenn man fertig (mit der Welt) ist kommt ein **Pull Request**.
 
@@ -51,22 +57,22 @@ Ablauf ohne Github:
 
 .. code-block:: bash
 
-    # Auf Seite des Forkers (user_b)
-    $ git request-pull HEAD^1 https://github.com/<user_b>/repo.git > mail
+    # Auf Seite des Forkers (bob)
+    $ git request-pull HEAD^1 https://github.com/<bob>/repo.git > mail
     The following changes since commit 04ca9db3149956ed7670d699cb4b4328386b88e1:
       Sophisticated Commit Message. (2013-05-11 00:36:56 +0200)
 
     are available in the git repository at:
-      https://github.com/<user_b>/repo.git master
+      https://github.com/<bob>/repo.git master
 
-    # Auf Seite des Annehmers (user_a)
-    $ git remote add user_b https://github.com/<user_b>/repo.git
-    $ git pull user_b 
+    # Auf Seite des Annehmers (alice)
+    $ git remote add bob https://github.com/<bob>/repo.git
+    $ git pull bob 
 
 Ablauf mit Github:
 
-    - ``user_b`` macht über Github einen Pull Request.
-    - ``user_a`` klickt auf ``Confirme Merge``.
+    - ``bob`` macht über Github einen Pull Request.
+    - ``alice`` klickt auf ``Confirme Merge``.
 
 
 Demo: Organisationen
@@ -82,7 +88,7 @@ Verwaltung von...
 
 - Membern (ein GitHub User entspricht einem Member)
 - Teams (Anlegen) 
-- Rechten (Push, Pull, Admin)
+- Rechten (Pull, Push, Admin)
 
 
 Demo: Sonstiges #1
@@ -128,11 +134,18 @@ Demo: Sonstiges #2
 
 .. _Dashboard: https://github.com/
 
+----------
+Github-APi
+----------
+
+TODO
+
+
 -------------
 ``git hooks``
 -------------
 
-- Mechnismus um wichtige git-commandos einzuhacken 
+- Mechanismus um in wichtige git-commandos einzuhaken 
 - Meist kleine Shell-Scripte:
 
 .. code-block:: bash

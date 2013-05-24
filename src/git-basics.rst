@@ -21,7 +21,7 @@ Git Basics: Ab in die Shell
 
 **Erklärung:**
 
-      http://www.youtube.com/watch?v=4XpnKHJAok8
+      http://www.youtube.com/watch?v=4XpnKHJAok8&t=8m20s
 
 --------------
 ``git init``
@@ -88,9 +88,9 @@ Git Basics: Ab in die Shell
 
     http://ndpsoftware.com/git-cheatsheet.html
 
------------------
-``git commit #1``
------------------
+--------------
+``git commit``
+--------------
 
 .. code-block:: bash
 
@@ -117,9 +117,9 @@ Git Basics: Ab in die Shell
    # On branch master
    nothing to commit, working directory clean
 
------------------
-``git commit #2``
------------------
+--------------------------
+Freunde von ``git commit``
+--------------------------
 
 Früher oder später will man etwas berichtigen
 
@@ -133,13 +133,20 @@ Früher oder später will man etwas berichtigen
 
     # änderungen an einem file zurücksetzen
     # Working Tree -> Unmodified
-    git checkout -- your_file.txt
+    $ git checkout -- your_file.txt
 
 .. code-block:: bash
 
     # "git add" rückgängig machen
     # Index -> Working Tree
-    git reset your_file.txt
+    $ git reset your_file.txt
+
+.. code-block:: bash
+
+    # Änderungen kurz wegsichern
+    $ git stash
+
+
 
 ----------------------
 Die Objektdatenbank #1
@@ -169,6 +176,57 @@ Die Objektdatenbank #3
 .. image:: /_static/simple_branch.png
    :align: center
    :width: 100%
+
+...
+---
+
+
+.. figure:: /_static/yoda.png
+    :class: fill 
+    :width: 20%
+
+-----------
+Branches #1
+-----------
+
+Branches erstellt man mit:
+
+.. code-block:: bash
+
+    $ git checkout -b <branch-name> 
+
+In bestehende branches wechseln:
+
+.. code-block:: bash
+
+    $ git checkout <branch-name>
+
+Branches auflisten:
+
+.. code-block:: bash
+
+    $ git branch --all
+
+-----------
+Branches #2
+-----------
+
+Branches führt man zusammen mit:
+
+.. code-block:: bash
+
+    $ git merge <target-branch>
+
+.. rst-class:: build
+
+- Dabei können böse Dinge passieren.
+- Dinge die ``git``-Anfänger zu CVS-Usern werden lässt.
+- Es können **Merge-Conflicts** entstehen.
+- Was passiert wenn in beiden ``branches`` dasselbe File geändert wurde?
+
+    - Andere Zeile? ``git`` merged es automatisch. 
+    - Selbe Zeile? Uh-oh.
+
 
 -----------------
 ``git remote #1``
@@ -239,13 +297,29 @@ Und jetzt in ``Git-Speak``?
     :align: center
     :width: 55%
 
+------------
+``git pull``
+------------
+
+.. rst-class:: build
+
+- Das logische Äquivalent zu ``git push``.
+- Zieht Änderungen von einem **remote**.
+
+    .. code-block:: bash
+
+        $ git pull <remote> <remote-branch>
+
+- Auch hier können **Merge-Conflicts** entstehen.
+- Vor einem ``git push`` sollte man immer ein ``git pull`` machen.
+
+
 --
 ……
 --
 
 .. figure:: /_static/af.jpg
    :class: fill
-
 
 -------------
 ``git fetch``
@@ -275,7 +349,7 @@ Und jetzt in ``Git-Speak``?
 
 **Aufgabe:**
 
-    - Finde heraus wann ein Fehler eingefürt wurde.
+    - Finde heraus wann ein Fehler eingeführt wurde.
     - Schaue dir an was damals geändert wurde.
     - Leite daraus ab was der Fehler ist.
 
@@ -355,6 +429,35 @@ Was lernt man draus?
 
 \* (*Noch mehr davon:* http://whatthecommit.com/)
 
+-----------
+``git tag``
+-----------
+
+- Manchmal muss man einen commit *taggen*.
+- Wie ``branches``, nur *fest*.
+- Beispielsweise mit einer Version: **1.2 beta**
+
+    .. code-block:: bash 
+
+        # Neuen Tag anlegen
+        git tag "1.2 beta"
+
+    .. code-block:: bash
+
+        # Alle Tags auflisten
+        git tag
+
+    .. code-block:: bash 
+
+        # Anderes Tag löschen.
+        git tag -d "1.2 beta"
+
+    .. code-block:: bash 
+
+        # Tags "veröffentlichen"
+        git push origin <local-tag-name>
+
+
 ---------
 Workflows
 ---------
@@ -374,13 +477,13 @@ Tooling
 * Eclipse EGit
 * Netbeans (bereits integriert)
 
-|
-
 **Standalone Tools**
 
-* gitg (Linux Gnome)
-* tig (Linux ncurses)
+* gitg (Linux / Gnome)
+* giggle (Portabel / Gnome)
+* tig (Linux / ncurses)
 * gitk (bereits in git enthalten)
+* GitHub Windows Client
 
 
 -----------------
@@ -451,16 +554,15 @@ Mit Rebase:
 
 .. code-block:: bash
 
-    $ git checkout experiment
-    $ git rebase master
-    $ git checkout master
-    $ git merge ex
+    $ git checkout experiment  # In 'experiment' wechseln
+    $ git rebase master        # Basis auf master verschieben
+    $ git checkout master      # In 'master' wechseln
+    $ git merge experiment     # Fast-Forward Merge zu 'experiment'
 
 .. image:: /_static/gitrebase-3.png
     :align: center
     :width: 90%
 
----
 ...
 ---
 

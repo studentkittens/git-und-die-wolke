@@ -38,8 +38,6 @@
     -webkit-border-bottom-left-radius: 10px;
     -moz-border-bottom-left-radius: 10px;
     -o-border-bottom-left-radius: 10px;
-
-
 }
 
 .slides > article.level-1 .caption {
@@ -52,7 +50,6 @@
 
 
 body {
-    font-family: 'PT Sans', sans-serif;
     min-height: 740px;
     background: #99ccff;
     background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(#99ccff), to(#336699));

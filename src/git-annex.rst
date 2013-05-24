@@ -5,9 +5,9 @@ Git Annex: Dropbox fuer Harte
 .. figure:: /_static/gitcloud.png
    :class: fill
 
---------------------------------
-git annex - a wrapper around git
---------------------------------
+----------------------------------------
+``git annex`` - a Wrapper around ``git``
+----------------------------------------
 |
 
 .. image:: /_static/gylfie.png
@@ -15,9 +15,9 @@ git annex - a wrapper around git
    :width: 400px
 
 
-------------------
-Was ist git-annex?
-------------------
+----------------------
+Was ist ``git-annex?``
+----------------------
 
 **Problem:**
 
@@ -29,25 +29,25 @@ Was ist git-annex?
    :align: center
    :width: 200px
 
-------------------
-Was ist git-annex?
-------------------
+----------------------
+Was ist ``git-annex?``
+----------------------
 
 **Abhilfe: annex**
     
-    * Ein wrapper um git herum, der git ,,aufbohrt''
+    * Ein Wrapper um ``git`` herum, der git *,,aufbohrt''*
     * Nur Metadaten werden verwaltet 
-    * Content wird nicht ,,getrackt'', dennoch sind git features für das
-      Filemanagement weiterhin verfügbar und ,,nice''
+    * Content wird nicht *,,getrackt''*, dennoch sind git features für das
+      Filemanagement weiterhin verfügbar und *,,nice''*
 
 
 .. image:: /_static/annex.png
    :align: center
    :width: 200px
     
-------------------
-git annex features
-------------------
+----------------------
+``git annex`` Features
+----------------------
 
     * Location Tracking
     * Future Proofing
@@ -67,26 +67,26 @@ Alles okay?
 **njaaaa**
     
     * Noch recht stark in der Entwicklung
-    * Im moment hauptsächlich was für Geeks
+    * Im Moment hauptsächlich was für Geeks
     
 **Aber**
 
     * Abhilfe in Arbeit →  Webfrontend
 
 
--------------------------------------------
-Warum überhaupt das Ganze, es gibt Dropbox?
--------------------------------------------
+------------------------------------------------
+Warum überhaupt das Ganze, es gibt doch Dropbox?
+------------------------------------------------
 
-**Interessante Features die es bisher so nicht gibt**
+**Interessante Features die es bisher so nicht gibt:**
 
-    * Verschiedene ,,cloud remotes'' nutzbar z.B. Box.com, Rsync.net, Amazon S3
-    * Kontrolle liegt beim Benutzer, nicht Storage anbieter - interessant für
-      unternehmen mit kritischen Daten.
-    * verschlüsselung, Vertrauensstufen, Sharing etc.
-    * verschiedene ,,Repository Groups'' definierbar und kombinierbar → 
+    * Verschiedene *,,cloud remotes''* nutzbar z.B. ``box.com``, ``rsync.net``, Amazon S3
+    * Kontrolle liegt beim Benutzer, nicht Storage Anbieter - interessant für
+      Unternehmen mit kritischen Daten.
+    * Verschlüsselung, Vertrauensstufen, Sharing etc.
+    * Verschiedene ,,Repository Groups'' definierbar und kombinierbar → 
       verschiedene Szenarien abdeckbar.
-    * Praktisch viele Features die man von einer gutem storagelösung erwartet
+    * Praktisch viele Features die man von einer gutem Storagelösung erwartet
 
 
 --------------------------------
@@ -102,7 +102,7 @@ Power of git-annex for everybody
 
 .. raw:: html
 
-    <center><b>Frontend Demo + Dropbox usage video</b></center>
+    <center><b>Frontend Demo + <a href="http://downloads.kitenet.net/videos/git-annex/git-annex-xmpp-pairing.ogv">Dropbox usage Video</a></b></center>
 
 |
 |
