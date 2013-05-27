@@ -21,7 +21,10 @@ Git Basics: Ab in die Shell
 
 **Erklärung:**
 
-      http://www.youtube.com/watch?v=4XpnKHJAok8&t=8m20s
+      Linus Torvalds on GoogleTalk_.
+
+
+.. _GoogleTalk: http://www.youtube.com/watch?v=4XpnKHJAok8&t=8m20s
 
 --------------
 ``git init``
@@ -177,13 +180,14 @@ Die Objektdatenbank #3
    :align: center
    :width: 100%
 
-...
----
+-------------
+Git Branching
+-------------
 
 
-.. figure:: /_static/yoda.png
-    :class: fill 
-    :width: 20%
+.. figure:: /_static/branch.png
+    :align: center
+    :class: fill
 
 -----------
 Branches #1
@@ -458,14 +462,22 @@ Was lernt man draus?
         git push origin <local-tag-name>
 
 
----------
-Workflows
----------
+------
+Modell
+------
+
+.. figure:: /_static/gitflow.png
+    :class: fill
+    :width: 70%
+
+---
+...
+---
 
 
-.. image:: /_static/workflow.png
-    :align: center
-    :width: 110%
+.. figure:: /_static/yoda.png
+    :class: fill 
+    :width: 20%
 
 -------
 Tooling
@@ -563,6 +575,7 @@ Mit Rebase:
     :align: center
     :width: 90%
 
+---
 ...
 ---
 

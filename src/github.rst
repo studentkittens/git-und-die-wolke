@@ -9,7 +9,7 @@ Github: Ab in die Wolke
 Was ist Github?
 ---------------
 
-TODO
+- Ein (Social-)Code-Hosting Dienst.
 
 ----------------
 Was kann Github?
@@ -17,7 +17,7 @@ Was kann Github?
 
 - Für Open-Source kostenlos.
 
-   - Einschränkungen: 2 GB Speicherplatz.
+   - Einschränkungen: 1 GB Speicherplatz.
 
 - Infrastructure as a Service
 - Für Unternehmen gibt es ``private repos``.
@@ -89,6 +89,18 @@ Verwaltung von...
 - Membern (ein GitHub User entspricht einem Member)
 - Teams (Anlegen) 
 - Rechten (Pull, Push, Admin)
+
+
+Demo: Online Blame/Annotate/Edit
+--------------------------------
+
+- Code lässt sich online browsen.
+
+Zudem anschaubar:
+
+    History eines Files/Zeile
+    Autoren
+    ... TODO 
 
 
 Demo: Sonstiges #1
