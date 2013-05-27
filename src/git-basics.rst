@@ -601,7 +601,7 @@ Herausfinden wer wann etwas geändert hat:
 .. code-block:: bash
 
     $ git blame -L 24,28 src-git-basiscs.rst
-    CommitId (Autor Datum                Ln) Inhalt
+    # SHA256 (Autor Datum                Ln) Inhalt
     6ca2c188 (Elch  2013-05-27 15:24:43  24)       Linus Torvalds on GoogleTalk_.
     6ca2c188 (Elch  2013-05-27 15:24:43  25) 
     6ca2c188 (Elch  2013-05-27 15:24:43  26) 
