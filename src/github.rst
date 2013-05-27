@@ -9,11 +9,28 @@ Github: Ab in die Wolke
 Was ist Github?
 ---------------
 
+.. rst-class:: build
+
 - Ein (Social-)Code-Hosting Dienst.
+- Statisiken:
+
+    - ~3,5 Millionen User 
+    - 6 Millionen Repositories
+    - 158 Mitarbeiter
+    - April 2008 mit 6000 Usern und 2500 repos gestartet.
+
+- Bekannte Projekte:
+
+    - Erlang, PHP, Perl, Clojure
+    - Mirros: Linux-Kernel, Ruby
+    - Git
+    
 
 ----------------
 Was kann Github?
 ----------------
+
+.. rst-class:: build
 
 - Für Open-Source kostenlos.
 
@@ -94,14 +111,25 @@ Verwaltung von...
 Demo: Online Blame/Annotate/Edit
 --------------------------------
 
-- Code lässt sich online browsen.
+Code lässt sich online:
 
-Zudem anschaubar:
+  - Browsen_.
+  - Blamen_.
+  - Historisch_ betrachten.
+  - Editieren_.
 
-    History eines Files/Zeile
-    Autoren
-    ... TODO 
+.. _Browsen: https://github.com/studentkittens/git-demo/blob/master/Makefile
+.. _Blamen: https://github.com/studentkittens/git-demo/blame/master/Makefile
+.. _Historisch: https://github.com/studentkittens/git-demo/commits/master/Makefile
+.. _Editieren: https://github.com/studentkittens/git-demo/edit/master/Makefile
 
+|
+|
+|
+|
+|
+
+**Tipp:** Auch Bilder, Dokumente und Videos sind previewbar.
 
 Demo: Sonstiges #1
 ------------------
@@ -147,10 +175,27 @@ Demo: Sonstiges #2
 .. _Dashboard: https://github.com/
 
 ----------
-Github-APi
+Github-API
 ----------
 
-TODO
+Möglichkeit um…
+
+.. rst-class:: build
+
+- …GitHub in Anwendungen zu integrieren.
+- …Volltextsuche auf allen Repositories.
+- …Statisken.
+- …Activities. (Alternative zu ``git hooks``)
+- …Aktionen zu triggern (zb. Pull Requests.).
+
+.. code-block:: bash
+
+    # Alle Repositories eines Users auflisten
+    $ curl -q https://api.github.com/users/studentkittens/repos \
+      | grep 'full_name'
+    "full_name": "qitta/dotfiles",
+    "full_name": "qitta/foozel",
+    "full_name": "qitta/scripts",
 
 
 -------------

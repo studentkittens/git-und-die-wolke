@@ -504,7 +504,7 @@ Best Practices #1
 
 .. rst-class:: build
 
-- ``.gitignore`` nutzen.
+- ``.gitignore`` nutzen (und ``git clean``!).
   
     - Keinen autogenerierten Code/Projektdateien committen.
     - Wenn nicht vermeidbar dann in eigenen Commit.
