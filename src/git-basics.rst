@@ -586,24 +586,23 @@ Mit Rebase:
 Suchen und Beschuldigen
 -----------------------
 
-Suchen in einem Repository: 
+Suche ``background:`` in allen ``.css`` Dateien. 
 
 .. code-block:: bash
 
-    $ git grep -n 'Linus'
-    src/git-basics.rst:15:    * Linus: ``A distributed stupid content tracker``
-    src/git-basics.rst:24:      Linus Torvalds on GoogleTalk_.
-    src/git-basics.rst:593:    $ git grep -n 'Linus'
-    src/git-basics.rst:604:    6ca2c188 (Elch  2013-05-27 15:24:43  24)       Linus Torvalds on GoogleTalk_.
+    $ git grep -n 'background:' -- '*.css'
+    src/custom.css:56: background: -webkit-radial-gradient(#9cf, #369);
+    src/custom.css:57: background:    -moz-radial-gradient(#9cf, #369);
+    src/custom.css:58: background:     -ms-radial-gradient(#9cf, #369);
 
 Herausfinden wer wann etwas geändert hat:
 
 .. code-block:: bash
 
     $ git blame -L 24,28 src-git-basiscs.rst
-    # SHA256 (Autor Datum                Ln) Inhalt
-    6ca2c188 (Elch  2013-05-27 15:24:43  24)       Linus Torvalds on GoogleTalk_.
-    6ca2c188 (Elch  2013-05-27 15:24:43  25) 
-    6ca2c188 (Elch  2013-05-27 15:24:43  26) 
-    6ca2c188 (Elch  2013-05-27 15:24:43  27) .. _GoogleTalk: http://www.youtube.com/watch?v=4XpnKHJAok8&t=8m20s
-    b276c739 (Katze 2013-05-06 19:28:45  28) 
+    # SHA256 (Autor LN) Content
+    77a79bbc (Elch  56) background: -webkit-radial-gradient(#9cf, #369);
+    64ac73cb (Katze 57) background:    -moz-radial-gradient(#9cf, #369);
+    77a79bbc (Elch  58) background:     -ms-radial-gradient(#9cf, #369);
+
+→ Der Autor ``Katze`` ist für den Mozilla-Support zuständig.

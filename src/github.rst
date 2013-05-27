@@ -23,7 +23,7 @@ Was ist Github?
 
     - Erlang, PHP, Perl, Clojure
     - Mirros: Linux-Kernel, Ruby
-    - Git
+    - Git itself.
     
 
 ----------------
@@ -186,7 +186,7 @@ Möglichkeit um…
 - …Volltextsuche auf allen Repositories.
 - …Statisken.
 - …Activities. (Alternative zu ``git hooks``)
-- …Aktionen zu triggern (zb. Pull Requests.).
+- …Aktionen zu triggern (zb. Pull Requests).
 
 .. code-block:: bash
 
