@@ -146,8 +146,8 @@ Früher oder später will man etwas berichtigen
 
 .. code-block:: bash
 
-    # Änderungen kurz wegsichern
-    $ git stash
+    $ git stash       # Änderungen kurz wegsichern
+    $ git stash pop   # … später wieder hervorholen
 
 
 
@@ -581,3 +581,29 @@ Mit Rebase:
 
 .. figure:: /_static/thanksobama.jpg
    :class: fill
+
+-----------------------
+Suchen und Beschuldigen
+-----------------------
+
+Suchen in einem Repository: 
+
+.. code-block:: bash
+
+    $ git grep -n 'Linus'
+    src/git-basics.rst:15:    * Linus: ``A distributed stupid content tracker``
+    src/git-basics.rst:24:      Linus Torvalds on GoogleTalk_.
+    src/git-basics.rst:593:    $ git grep -n 'Linus'
+    src/git-basics.rst:604:    6ca2c188 (Elch  2013-05-27 15:24:43  24)       Linus Torvalds on GoogleTalk_.
+
+Herausfinden wer wann etwas geändert hat:
+
+.. code-block:: bash
+
+    $ git blame -L 24,28 src-git-basiscs.rst
+    CommitId (Autor Datum                Ln) Inhalt
+    6ca2c188 (Elch  2013-05-27 15:24:43  24)       Linus Torvalds on GoogleTalk_.
+    6ca2c188 (Elch  2013-05-27 15:24:43  25) 
+    6ca2c188 (Elch  2013-05-27 15:24:43  26) 
+    6ca2c188 (Elch  2013-05-27 15:24:43  27) .. _GoogleTalk: http://www.youtube.com/watch?v=4XpnKHJAok8&t=8m20s
+    b276c739 (Katze 2013-05-06 19:28:45  28) 
