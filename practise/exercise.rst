@@ -11,7 +11,8 @@ Motivationshilfe:
 Vorraussetzungen: 
 -----------------
 
-    Keine. Umgang mit der Shell ist aber hilfreich.
+    Ihr habt aufgepasst, sonst keine. 😃
+    Umgang mit der Shell ist aber hilfreich.
 
 =============
 I - Git Lokal
@@ -59,6 +60,7 @@ II - Collaboration
         while time_left and tests_not_working:
             task = ask_staff_for_task()
             task.work_on_it()
+            task.execute_tests()
             task.push_to_github()
 
 
