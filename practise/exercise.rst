@@ -1,64 +1,73 @@
+=================================
 Übungsaufgaben: Git und die Wolke
 =================================
 
-Einleitung
-----------
-    
-Um das gerade Erlebte verinnerlichen zu können, habt ihr nun eine halbe Stunde
-Zeit euch mit ``git`` und ``Github`` vertraut zu machen. Nach dem erfolgreichen Ableben
-der Prüfung gibt es für jeden von Euch eine kleine Überraschung.
+Motivationshilfe:
+-----------------
+
+    - Wer Aufgabe I fertig gemacht hat kriegt einen Octocat-Sticker.
+    - Wer sich bei Aufgabe II hervortut bekommt auch eine kleine Überraschung.
+
+Vorraussetzungen: 
+-----------------
+
+    Keine. Umgang mit der Shell ist aber hilfreich.
+
+=============
+I - Git Lokal
+=============
+
+Ein wenig lokales Warmup mit ``git``. (Dauer ca. 15 min.)
+
+Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
+
+    1) Lege einen Ordner an und Initialisiere ein neues Git Repository
+    2) Schreibe eine neue ``README.txt`` Datei und füge sie dem ``Stage`` hinzu.
+    3) Comitte deine Änderungen und schaue vorher und nacher nach mit ``git status`` nach was sich ändert hat. 
+    4) Prüfe dein Vorgehen in eine Visualisierungstool deiner Wahl. (zb ``git log``)
+    5) Lege ein ``.gitignore`` Datei an und exkludiere darin alle Files mit der
+       Endung ``.txt``. Stell sicher dass es funktioniert hat. Wird ``README.txt`` ignoriert?
+    6) **Branching:**
+        
+       1) Lege einen neuen Branch ``readme-improv`` an.
+       2) Mach einen neuen commit, und verändere in diesem ``README.txt``
+       3) Wechsel zum ``master`` branch.
+       4) Mache auch dort einen Commit in dem du ``README.txt`` veränderst.
+       5) Merge ``master`` mit ``readme-improv``!
+          Forgeschrittene können hier auch ``git rebase`` nutzen.
+
+==================
+II - Collaboration
+==================
+
+    1) Legt euch einen GitHub-Account an. Ihr könnte ihn später auch wieder löschen.
+    2) Teile ``git`` mit wer du bist.
+    3) Hier findet ihr ein Python-Projekt das noch nicht ganz fertig ist:
+
+        https://github.com/studentkittens/git-python-project.git
+
+       Forkt dieses Projekt!
+    4) Clont dieses Projekt in euere VM: 
+
+       .. code-block:: bash
+
+            $ git clone https://github.com/studentkittens/git-python-project.git
+            $ cd git-python-project
+
+    5) .. code-block:: python
+
+        while time_left and tests_not_working:
+            task = ask_staff_for_task()
+            task.work_on_it()
+            task.push_to_github()
 
 
-I - Git lokal
--------------
+Der aktuelle Zustand eurer Arbeit wird durch eine LED am RaspberryPi farblich angezeigt: 
 
-Auch wenn es in erster Linie nichts mit ,,der Cloud'' zu tun hat, sind wir der
-Meinung dass es jeder Informatiker mal gehört haben sollte, es geht um git. Um
-es nutzen zu können brauchen wir ein *Repository*.
-
-In der ersten Übunggeht es nun darum ein Repository anzulegen und sich mit dem ``git``-Werkzeugen
-vertraut zu machen.
-
-    Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
-
-        * Konfiguriere deine ``git`` "Identität".
-        * Lege einen Ordner an und Initialisiere ein neues Git Repository
-        * Lege eine neue README Datei an, fülle sie mit Text und mach sie dem git
-          Repository bekannt
-        * Lege eine **.gitignore** Datei in deinem Repository an welche alle
-          Dateien mit der Endung **.bin** und den Ordner **test** ausschließt,
-          teste deine Konfiguration: **git status**
-        * Füge weitere Dateien deinem Repository hinzu und committe diese mit
-          entsprechend aussagekräftigen Messages -> Prüfe deine git History mit
-          ``gitg``, ``tig``, ``git log`` oder ``gitk``.
-        * Als nächstes soll ein Branch namens **katzenbaum** angelegt werden, in
-          diesem Branch sollen nun zwei Dateien abgeändert werden und eine Neue
-          hinzugefügt werden, anschließen ist dieser Branch mit dem Master
-          Branch zu mergen. 
-
-          Forgeschrittene können auch ``git rebase`` nutzen!
-
-
-II - Über den Wolken…
----------------------
-
-In dieser Übung geht es darum Github als ,,Cloudservice'' nutzen zu lernen. Als
-Grundvoraussetzung brauchen wir hierfür einen Github Account und bitte euch
-hiermit sich einen z.B. mit der ``hof-university.de``-Adresse anzulegen (dieser
-Account kann nach der Übung wieder gelöscht werden).
-
-    Folgende Teilaufgaben sind durchzuführen:
-
-        * Richte dir einen Github Account unter https://www.github.com
-        * Erstelle ein Repository mit einem beliebigen Namen auf Github 
-        * Clone dein Repository, mach Änderungen analog zur lokalen Übung und
-          Pushe deine Arbeit in die Wolke
-
-        * Forke das Organisationsprojekt **xyz**
-        * Führe ein paar Änderungen am Code durch (z.B. Kommentaränderungen)
-        * ...und dann?
-
-III - Zu Himbeeren pushen
--------------------------
-
-Zu guter letzt.
++------------+------------+--------------------------+
+| Rot        |  ``make test`` läuft nicht durch.     |
++------------+---------------------------------------+
+| Gelb       | **TravisCI** buildet und testet.      |
++------------+---------------------------------------+
+| Grün       | ``make test`` läuft erfolgreich durch |
++------------+---------------------------------------+

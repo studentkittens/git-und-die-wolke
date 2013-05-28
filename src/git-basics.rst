@@ -593,7 +593,7 @@ Suche ``background:`` in allen ``.css`` Dateien.
     $ git grep -n 'background:' -- '*.css'
     src/custom.css:56: background: -webkit-radial-gradient(#9cf, #369);
     src/custom.css:57: background:    -moz-radial-gradient(#9cf, #369);
-    src/custom.css:58: background:     -ms-radial-gradient(#9cf, #369);
+    src/custom.css:58: background:         radial-gradient(#9cf, #369);
 
 Herausfinden wer wann etwas geändert hat:
 
@@ -603,6 +603,6 @@ Herausfinden wer wann etwas geändert hat:
     # SHA256 (Autor LN) Content
     77a79bbc (Elch  56) background: -webkit-radial-gradient(#9cf, #369);
     64ac73cb (Katze 57) background:    -moz-radial-gradient(#9cf, #369);
-    77a79bbc (Elch  58) background:     -ms-radial-gradient(#9cf, #369);
+    77a79bbc (Elch  58) background:         radial-gradient(#9cf, #369);
 
 → Der Autor ``Katze`` ist für den Mozilla-Support zuständig.
