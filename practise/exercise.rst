@@ -43,7 +43,7 @@ II - Collaboration
 
     1) Legt euch einen GitHub-Account an. Ihr könnte ihn später auch wieder löschen.
     2) Teile ``git`` mit wer du bist.
-    3) Hier findet ihr ein Python-Projekt das noch nicht ganz fertig ist:
+    3) Hier findet ihr ein Python-Projekt das noch nicht ganz fehlerfrei ist:
 
         https://github.com/studentkittens/git-python-project.git
 
@@ -52,7 +52,7 @@ II - Collaboration
 
        .. code-block:: bash
 
-            $ git clone https://github.com/studentkittens/git-python-project.git
+            $ git clone https://github.com/<euer_user>/git-python-project.git
             $ cd git-python-project
 
     5) .. code-block:: python
@@ -62,6 +62,7 @@ II - Collaboration
             task.work_on_it()
             task.execute_tests()
             task.push_to_github()
+            task.make_pull_request()
 
 
 Der aktuelle Zustand eurer Arbeit wird durch eine LED am RaspberryPi farblich angezeigt: 
