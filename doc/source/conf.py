@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# encoding: utf-8
+
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 # Git und die Wolke documentation build configuration file, created by
@@ -42,7 +45,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Git und die Wolke'
-copyright = '2013, Christhop Piechula, Christopher Pahl'
+copyright = '2013, Christoph Piechula, Christopher Pahl'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -167,10 +170,16 @@ html_static_path = ['_static']
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'GitunddieWolkedoc'
 
+release = ''
 
 # -- Options for LaTeX output --------------------------------------------------
-
 latex_elements = {
+    'inputenc': '\\usepackage[utf8]{inputenc}',
+    'classoptions': ',oneside',
+    'babel': '\\usepackage[ngerman]{babel}',
+    'printindex': ''
+}
+
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
 
@@ -179,13 +188,13 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
-}
+
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'GitunddieWolke.tex', 'Git und die Wolke Documentation',
-   'Christhop Piechula, Christopher Pahl', 'manual'),
+   'Christoph Piechula, Christopher Pahl', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -206,7 +215,7 @@ latex_documents = [
 #latex_appendices = []
 
 # If false, no module index is generated.
-#latex_domain_indices = True
+# latex_domain_indices = True
 
 
 # -- Options for manual page output --------------------------------------------
@@ -215,7 +224,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'gitunddiewolke', 'Git und die Wolke Documentation',
-     ['Christhop Piechula, Christopher Pahl'], 1)
+     ['Christoph Piechula, Christopher Pahl'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -229,7 +238,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'GitunddieWolke', 'Git und die Wolke Documentation',
-   'Christhop Piechula, Christopher Pahl', 'GitunddieWolke', 'One line description of project.',
+   'Christoph Piechula, Christopher Pahl', 'GitunddieWolke', 'One line description of project.',
    'Miscellaneous'),
 ]
 

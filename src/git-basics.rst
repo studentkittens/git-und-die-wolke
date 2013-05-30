@@ -155,11 +155,12 @@ Früher oder später will man etwas berichtigen
 Die Objektdatenbank #1
 ----------------------
 
-Drei unterschiedliche Objektypen: 
+Vier unterschiedliche Objektypen: 
 
-* Blobs
-* Trees
-* Commits
+* Blobs (Dateien)
+* Trees (Verzeichnisse)
+* Commits (Änderungen)
+* Referenzen (Branches oder Tags)
 
 .. image:: /_static/simple_tree.png
    :align: center
@@ -599,7 +600,7 @@ Herausfinden wer wann etwas geändert hat:
 
 .. code-block:: bash
 
-    $ git blame -L 24,28 src-git-basiscs.rst
+    $ git blame -L 56,58 src-git-basiscs.rst
     # SHA256 (Autor LN) Content
     77a79bbc (Elch  56) background: -webkit-radial-gradient(#9cf, #369);
     64ac73cb (Katze 57) background:    -moz-radial-gradient(#9cf, #369);

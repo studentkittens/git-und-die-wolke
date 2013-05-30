@@ -37,9 +37,9 @@ Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
        5) Merge ``master`` mit ``readme-improv``!
           Forgeschrittene können hier auch ``git rebase`` nutzen.
 
-==================
-II - Collaboration
-==================
+===========================
+II - Collaboration Workshop
+===========================
 
     1) Legt euch einen GitHub-Account an. Ihr könnte ihn später auch wieder löschen.
     2) Teile ``git`` mit wer du bist.

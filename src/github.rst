@@ -25,6 +25,14 @@ Was ist Github?
     - Mirros: Linux-Kernel, Ruby
     - Git itself.
     
+-------
+Octocat
+-------
+
+.. image:: /_static/octocat.jpg
+    :align: center
+    :width: 80%
+
 
 ----------------
 Was kann Github?

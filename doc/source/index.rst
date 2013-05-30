@@ -14,12 +14,3 @@ Contents:
    kurzbeschreibung
    motivation
    inhalt
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
