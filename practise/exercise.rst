@@ -71,6 +71,8 @@ gemeinsam mal probieren.
        Forkt dieses Projekt!
     4) Clont das geforkte Projekt in euere VM: 
 
+       |
+
        .. code-block:: bash
 
             $ git clone https://github.com/<euer_user>/git-python-project.git
@@ -88,10 +90,12 @@ gemeinsam mal probieren.
        der Aufgabe. Editiert diese.
 
     6) Wenn ihr fertig seid prüft hiermit nach ob der Test durchläuft:
-    
-    .. code-block:: bash
 
-            $ make test_<task_name>
+       |
+    
+       .. code-block:: bash
+
+               $ make test_<task_name>
 
        
     7) Falls ja: Pusht eueren Code zu eurem Fork.
