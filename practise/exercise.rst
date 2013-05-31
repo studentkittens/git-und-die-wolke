@@ -37,20 +37,10 @@ Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
        5) Merge ``master`` mit ``readme-improv``!
           Forgeschrittene können hier auch ``git rebase`` nutzen.
 
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
+
+.. image:: pusheencat.png
+   :width: 50%
+
 |
 
 =======================
@@ -110,11 +100,14 @@ Der aktuelle Zustand eurer Arbeit wird durch eine LED am RaspberryPi farblich an
 +------------+---------------------------------------+
 | Rot        |  ``make test`` läuft nicht durch.     |
 +------------+---------------------------------------+
-| Gelb       | **RaspberyCI** buildet und testet.    |
+| Gelb       |  ``make test`` läuft zu 50% durch.    |
 +------------+---------------------------------------+
-| Grün       | ``make test`` läuft erfolgreich durch |
+| Grün       | ``make test`` läuft erfolgreich durch.|
 +------------+---------------------------------------+
 
+|
+|
+|
 
 ===========
 III. Gource
