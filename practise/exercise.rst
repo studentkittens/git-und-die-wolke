@@ -11,14 +11,14 @@ Motivationshilfe:
 Vorraussetzungen: 
 -----------------
 
-    Ihr habt aufgepasst, sonst keine. :-)
+    Ihr habt aufgepasst, sonst keine.
     Umgang mit der Shell ist aber hilfreich.
 
 =============
 I - Git Lokal
 =============
 
-Ein wenig lokales Warmup mit ``git``. (Dauer ca. 15 min.)
+Ein wenig lokales Warmup mit ``git``. (**Dauer ca. 15 min.**)
 
 Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
 
@@ -37,11 +37,10 @@ Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
        5) Merge ``master`` mit ``readme-improv``!
           Forgeschrittene können hier auch ``git rebase`` nutzen.
 
+|
 
 .. image:: pusheencat.png
    :width: 50%
-
-|
 
 =======================
 II - Collaboration Game
