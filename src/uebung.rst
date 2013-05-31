@@ -44,4 +44,7 @@ III. Visualize!
 |
 |
 
-<center><b>gource .</b></center>
+
+.. raw:: html
+
+    <center><b>gource .</b></center>

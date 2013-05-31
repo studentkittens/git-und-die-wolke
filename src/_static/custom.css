@@ -61,6 +61,12 @@ body {
 }
 
 ul li:before {
-    content: '±  ';
-    font-size:75%;
+    content: '  ';
+    list-style-type: none;
+    background: url('plusminus.png') no-repeat top left;
+    height: 46px;
+    padding-left: 45px;
+
+    //content: '±  ';
+    //font-size:75%;
 }

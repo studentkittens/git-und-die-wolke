@@ -364,8 +364,10 @@ Hilfe?!
       .. code-block:: bash
 
          $ git help <commando>
+         $ git help tutorial
 
     - http://www.git-scm.com/documentation
+    - http://de.gitready.com/
     - Es gibt eine Menge Bücher.
 
 
