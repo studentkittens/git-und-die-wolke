@@ -488,9 +488,9 @@ Was lernt man draus?
         # Tags "veröffentlichen"
         git push origin <local-tag-name>
 
-------------
-Der Workflow
-------------
+-----------------------------
+Das GitFlow Branching Modell 
+-----------------------------
 
 .. figure:: /_static/gitflow.png
     :class: fill
