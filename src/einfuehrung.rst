@@ -60,3 +60,17 @@ Early-Adaptors-Umfrage
 .. raw:: html
 
     <center><b>Wer hat schonmal git oder ein dvcs genutzt?</b></center>
+
+
+Warum git? Warum nicht X?
+-------------------------
+
+
+|
+|
+|
+|
+
+.. raw:: html
+
+    <center><a href="http://git-scm.com/about">Git About</a></center>

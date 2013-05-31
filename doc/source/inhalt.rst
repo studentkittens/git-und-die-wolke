@@ -202,6 +202,39 @@ Zugeorndet zu einem Commit ist eine Commit-Message. Diese wird vom Anwender
 verfasst und enthält eine Beschreibung der gemachten Änderungen. Diese sollte
 kurz, aber aussagekräftig sein.
 
+---------------------
+Was ist ein ``diff``?
+---------------------
+
+Ein ``diff`` ist die Änderung zwischen zwei Änderungen.
+Die Änderungen werden dabei in einem definierten Format ausgegeben:
+
+    - Jede hinzugefügte Zeile wird mit einem **+** angefangen.
+    - Jede gelöschte Zeile wird mit einem **-** angefangen.
+    - Zudem werden darum herum Zeilennummern und andere unveränderte Zeilen
+      angezeigt.
+    - Oben steht jeweils ein Header mit Information über das betreffende File.
+
+
+.. code-block:: bash
+
+    # Zeige alle Änderungen seit dem letzten Commit
+    $ git diff
+    diff --git a/TODO.list b/TODO.list
+    index e6c2b18..a2fe0bc 100644
+    --- a/TODO.list
+    +++ b/TODO.list
+    @@ -1,21 +1,20 @@
+    +✓ Hinweise in der Versionshistorie verstecken  
+    -✓ Zettelchen schreiben
+
+.. code-block:: bash
+
+    # Bestimmte commit zeigen
+    $ git show a2fe0bc
+    <dasselbe wie oben>
+
+
 --------------------------
 Freunde von ``git commit``
 --------------------------

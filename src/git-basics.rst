@@ -121,6 +121,34 @@ Alle Bereiche interaktiv als HTML:
    # On branch master
    nothing to commit, working directory clean
 
+---------------------
+Was ist ein ``diff``?
+---------------------
+
+.. rst-class:: build
+
+- Ein ``diff`` ist die Änderung zwischen zwei Änderungen.
+- Errr… Wat?
+
+    .. code-block:: bash
+
+        # Zeige alle Änderungen seit dem letzten Commit
+        $ git diff
+        diff --git a/TODO.list b/TODO.list
+        index e6c2b18..a2fe0bc 100644
+        --- a/TODO.list
+        +++ b/TODO.list
+        @@ -1,21 +1,20 @@
+        +✓ Hinweise in der Versionshistorie verstecken  
+        -✓ Zettelchen schreiben
+
+    .. code-block:: bash
+
+        # Bestimmte commit zeigen
+        $ git show a2fe0bc
+        <dasselbe wie oben>
+
+
 --------------------------
 Freunde von ``git commit``
 --------------------------
@@ -320,33 +348,27 @@ Und jetzt in ``Git-Speak``?
 - Auch hier können **Merge-Conflicts** entstehen.
 - Vor einem ``git push`` sollte man immer ein ``git pull`` machen.
 
-
---
-……
---
-
-.. figure:: /_static/af.jpg
-   :class: fill
-
--------------
-``git fetch``
--------------
+-------
+Hilfe?!
+-------
 
 .. rst-class:: build
 
-- ``git pull`` ist ein ``git fetch && git merge``.
-- Warum sollte man das wollen?
-- Wenn man nicht will dass automatisch gemerged wird.
-- Beispiel: 
+- Das ist ja alles schön und gut…
+- …aber ich versteh kein Wort.
 
-  .. code-block:: bash
+- Hier wirst du geholfen:
 
-    $ git fetch origin 
-    $ git checkout origin/master
-    $ # look around
-    $ # if satisfied:
-    $ git checkout master
-    $ git merge origin/master
+    - manpages: 
+
+      .. code-block:: bash
+
+         $ git help <commando>
+
+    - http://www.git-scm.com/documentation
+    - Es gibt eine Menge Bücher.
+
+
 
 -----------------
 ``git bisect #1``
@@ -464,10 +486,9 @@ Was lernt man draus?
         # Tags "veröffentlichen"
         git push origin <local-tag-name>
 
-
-------
-Modell
-------
+------------
+Der Workflow
+------------
 
 .. figure:: /_static/gitflow.png
     :class: fill
@@ -516,7 +537,6 @@ Best Practices #1
 - Sinnvolle commit messages.
 
     - Siehe Folie für ``git bisect 4``.
-
 
 -----------------
 Best Practices #2
@@ -609,3 +629,30 @@ Herausfinden wer wann etwas geändert hat:
     77a79bbc (Elch  58) background:         radial-gradient(#9cf, #369);
 
 → Der Autor ``Katze`` ist für den Mozilla-Support zuständig.
+
+--
+……
+--
+
+.. figure:: /_static/af.jpg
+   :class: fill
+
+-------------
+``git fetch``
+-------------
+
+.. rst-class:: build
+
+- ``git pull`` ist ein ``git fetch && git merge``.
+- Warum sollte man das wollen?
+- Wenn man nicht will dass automatisch gemerged wird.
+- Beispiel: 
+
+  .. code-block:: bash
+
+    $ git fetch origin 
+    $ git checkout origin/master
+    $ # look around
+    $ # if satisfied:
+    $ git checkout master
+    $ git merge origin/master
