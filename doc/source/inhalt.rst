@@ -349,6 +349,8 @@ Die Vorgehensweise bei einem zentralem Versionsverwaltungsystem.
     
     Workflow bei z.B. SVN
 
+    Quelle: [GitSCM]_
+
 
 
 Dezentrale Arbeitsweise im Kontrast dazu. In diesem Beispiel ist Alice
@@ -362,8 +364,9 @@ diesen nun integrieren und in das zentrale Repository einpflegen.
     :align: center
     :width: 70%
     
-    Dezentraler Workflow
+    Dezentraler Workflow mit Dikator
 
+    Quelle: [GitSCM]_
 
 
 Bedienung von ``git-remote``:

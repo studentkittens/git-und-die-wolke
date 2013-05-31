@@ -86,8 +86,9 @@ Git Basics: Ab in die Shell
 
 .. image:: /_static/untracked_to_staged.png
    :align: center
+   :width: 80%
 
-[Noch] Einfacher dargestellt:
+Alle Bereiche interaktiv als HTML:
 
     http://ndpsoftware.com/git-cheatsheet.html
 
@@ -164,6 +165,7 @@ Vier unterschiedliche Objektypen:
 
 .. image:: /_static/simple_tree.png
    :align: center
+   :width: 60%
 
 ----------------------
 Die Objektdatenbank #2
@@ -244,7 +246,7 @@ Branches führt man zusammen mit:
 
 .. image:: /_static/central.png
     :align: center
-    :width: 70%
+    :width: 105%
 
 -----------------
 ``git remote #2``
@@ -254,7 +256,7 @@ Und jetzt dezentral:
 
 .. image:: /_static/decentral.png
     :align: center
-    :width: 70%
+    :width: 105%
 
 -----------------
 ``git remote #3``

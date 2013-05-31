@@ -6,8 +6,6 @@
 Welcome to Git und die Wolke's documentation!
 =============================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
