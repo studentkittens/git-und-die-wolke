@@ -8,8 +8,8 @@ Motivationshilfe:
     - Wer Aufgabe I fertig gemacht hat kriegt einen Octocat-Sticker.
     - Wer sich bei Aufgabe II hervortut bekommt auch eine kleine Überraschung.
 
-Vorraussetzungen: 
------------------
+Voraussetzungen: 
+----------------
 
     Ihr habt aufgepasst, sonst keine.
     Umgang mit der Shell ist aber hilfreich.
@@ -18,14 +18,14 @@ Vorraussetzungen:
 I - Git Lokal
 =============
 
-Ein wenig lokales Warmup mit ``git``. (**Dauer ca. 15 min.**)
+Ein wenig lokales Warm-Up mit ``git``. (**Dauer ca. 15 min.**)
 
 Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
 
     1) Lege einen Ordner an und Initialisiere ein neues Git Repository
     2) Schreibe eine neue ``README.txt`` Datei und füge sie dem ``Stage`` hinzu.
-    3) Comitte deine Änderungen und schaue vorher und nacher nach mit ``git status`` nach was sich ändert hat. 
-    4) Prüfe dein Vorgehen in eine Visualisierungstool deiner Wahl. (zb ``git log``)
+    3) Committe deine Änderungen und schaue vorher und nachher nach mit ``git status`` nach was sich ändert hat. 
+    4) Prüfe dein Vorgehen in eine Visualisierungstool deiner Wahl. (z.B. ``git log``)
     5) Lege ein ``.gitignore`` Datei an und exkludiere darin alle Files mit der
        Endung ``.txt``. Stell sicher dass es funktioniert hat. Wird ``README.txt`` ignoriert?
     6) **Branching:**
@@ -35,7 +35,7 @@ Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
        3) Wechsel zum ``master`` branch.
        4) Mache auch dort einen Commit in dem du ``README.txt`` veränderst.
        5) Merge ``master`` mit ``readme-improv``!
-          Forgeschrittene können hier auch ``git rebase`` nutzen.
+          Fortgeschrittene können hier auch ``git rebase`` nutzen.
 
 |
 
@@ -58,7 +58,7 @@ gemeinsam mal probieren.
         https://github.com/studentkittens/git-python-project.git
 
        Forkt dieses Projekt!
-    4) Clont das geforkte Projekt in euere VM: 
+    4) Clont das geforkte Projekt in eure VM: 
 
        |
 
@@ -71,7 +71,7 @@ gemeinsam mal probieren.
 
        Jeder Task besteht aus einer fehlerhaften Python Funktion. Eure Aufgabe
        ist es nun diese entweder durch Überlegung zu reparieren, oder unter
-       Anwendung der vorgestellten git tools. Weitere Hinweise findet sich auch
+       Anwendung der vorgestellten Git-Tools. Weitere Hinweise findet sich auch
        im Quelltext.
 
        Auf den Zettel den eine Gruppe bekommt steht der Name des Directories das
@@ -87,7 +87,7 @@ gemeinsam mal probieren.
                $ make test_<task_name>
 
        
-    7) Falls ja: Pusht eueren Code zu eurem Fork.
+    7) Falls ja: Pusht euren Code zu eurem Fork.
     8) Macht ein Pull Request auf das Ursprungs Repository.
     9) Sollte alles gut gehen sollte die LED vorne von Rot nach Grün wandern.
 

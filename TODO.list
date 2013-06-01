@@ -4,17 +4,22 @@ Elch:
 ✓ Zettelchen schreiben
 ✓ diff erklären?
 ✓ excercise.rst anpassen
-✓ Folien für übungserklärungn
+✓ Folien für Übungserklärungn
 
 Kitteh:
 
 ✓ Raspberry in der FH austesten + catlight
-- cheatsheet + übungsblatt ausdrucken
-- Vm vorbereiten (auf nullcat und usb sticks)
-- Hinweise zur VM geben
+✓ Spellcheck über Folien und Docs laufen lassen 
+✓ Hinweise zur VM geben (siehe Tool_Uebersicht.pdf in VM)
+✓ Vm vorbereiten, Editor und Git-Tools installiert
+✓ vm_stuff hinzugefügt, Tool_Uebersichti.[pdf, rst] und ShellIntro.pdf added
 
 Together:
 
 + Überlegen: Welche Überraschung für Ersten Lösenden?
 + Dokument ausdrucken, notizen drauf machen wähernd man nochmal vorträgt.
 + 24 Stunden Angst haben
++ Aktuelle Version von VM vor dem Vortrag uppen und auf Usb-Sticks kopieren
++ Cheatsheet + Übungsblatt ausdrucken
++ Spellcheck und Grammatik nochmal prüfen (Wir haben oft Sekundenschlaf)
++ In der FH Probe vortragen + Raspberry Re-Check
