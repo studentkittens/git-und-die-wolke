@@ -85,28 +85,42 @@ gemeinsam mal probieren.
        .. code-block:: bash
 
                $ make test_<task_name>
-
        
     7) Falls ja: Pusht euren Code zu eurem Fork.
     8) Macht ein Pull Request auf das Ursprungs Repository.
     9) Sollte alles gut gehen sollte die LED vorne von Rot nach Grün wandern.
 
-       Je Nach Schwierigkeit der Aufgabe ein Stück mehr.
+Tipps und Hinweise:
+-------------------
 
+1) Der erste interessante Commit ist mit *"initial"* getaggt. 
+   D.h.: Ihr könnt folgendes machen:
 
-Der aktuelle Zustand eurer Arbeit wird durch eine LED am RaspberryPi farblich angezeigt: 
+   .. code-block:: bash
 
-+------------+---------------------------------------+
-| Rot        |  ``make test`` läuft nicht durch.     |
-+------------+---------------------------------------+
-| Gelb       |  ``make test`` läuft zu 50% durch.    |
-+------------+---------------------------------------+
-| Grün       | ``make test`` läuft erfolgreich durch.|
-+------------+---------------------------------------+
+      $ git bisect start HEAD initial
 
-|
-|
-|
+2) Nach einem git clone ist nur der master branch vorhanden. Andere Branches
+   nur als sog. *"Remote Tracking Branches"*. Um daraus einen benutzbaren Branch
+   zu machen müsst ihr einen *"Local tracking branch"* anlegen: 
+   
+   .. code-block:: bash
+
+      $ git checkout -b <name> origin/<name>
+
+3) Die Aufgabennamen und die dazu empfohlenen git Kommandos:
+
+    +-----------------------+----------------------------+
+    | **Git Kommando**      | **Aufgaben**               |
+    +=======================+============================+
+    | git bisect / show     | monte_carlo_pi, fibonacci  |
+    +-----------------------+----------------------------+
+    | git branch / checkout | int2hex, fac               |
+    +-----------------------+----------------------------+
+    | git grep / blame      | deduplicate, euler         |
+    +-----------------------+----------------------------+
+    | git log / git show    | reverse, count_even        |
+    +-----------------------+----------------------------+
 
 ===========
 III. Gource
@@ -114,4 +128,4 @@ III. Gource
 
 Keine Panik, Ihr müsst nichts machen.
 
-Zum Abschluss visualisieren wir dann eure Arbeit!
+Zum Abschluss visualisieren wir dann eure Arbeit mit gource und gitstats.

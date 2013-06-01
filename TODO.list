@@ -45,3 +45,5 @@ Together:
     + git colors?
 
         git config --global color.ui auto
+
+    + Schauen dass alles up-to-date ist.
