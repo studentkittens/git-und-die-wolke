@@ -2,7 +2,7 @@
 Git und die Wolke
 =================
 
-Dekstop
+Desktop
 -------
 
 Auf dem Desktop findet Ihr:
