@@ -161,7 +161,7 @@ Demo: Sonstiges #1
         $ git tag 1.2.0rc1
         $ git push origin 1.2.0rc1
 
-.. _Beispiel: https://github.cngstom/sahib/glyr/contributors
+.. _Beispiel: https://github.com/sahib/glyr/contributors
 .. _Bugtracker: https://github.com/sahib/glyr/issues
 .. _Downloads: https://github.com/sahib/glyr/tags
 
