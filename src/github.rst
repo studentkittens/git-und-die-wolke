@@ -12,18 +12,18 @@ Was ist Github?
 .. rst-class:: build
 
 - Ein (Social-)Code-Hosting Dienst.
-- Statisiken:
+- Statistiken:
 
     - ~3,5 Millionen User 
     - 6 Millionen Repositories
     - 158 Mitarbeiter
-    - April 2008 mit 6000 Usern und 2500 repos gestartet.
+    - April 2008 mit 6000 Usern und 2500 Repos gestartet.
 
 - Bekannte Projekte:
 
     - Erlang, PHP, Perl, Clojure
     - Mirros: Linux-Kernel, Ruby
-    - Git itself.
+    - Git itself
     
 -------
 Octocat
@@ -46,15 +46,15 @@ Was kann Github?
 
 - Infrastructure as a Service
 - Für Unternehmen gibt es ``private repos``.
-- Für große Unternehmen kann man die Github-Software lizensieren.
-- Eigener Pastebin mit Versionierung: ``Gist``.
+- Für große Unternehmen kann man die Github-Software lizenzieren.
+- Eigener Pastebin mit Versionierung ``Gist``.
 - Volltextsuche über alle Repositories.
 
 
 Demo: Nutzerprofil
 ------------------
 
-- Git kennt nur den namen und email des Nutzers.
+- Git kennt nur den namen und Email des Nutzers.
 
 .. code-block:: bash
 
@@ -62,9 +62,9 @@ Demo: Nutzerprofil
     $ git config --global user.name "John Doe"
     $ git config --global user.email johndoe@example.com
 
-- Github kennt unabhängig davon noch einen Account.
+- GitHub kennt unabhängig davon noch einen Account.
 - Diesem sind ``1..n`` Repository zugeordnet. 
-- Zudem kann dieser User andere Projekte Forken, BugReports schreiben u.v.m
+- Zudem kann dieser User andere Projekte Forken, Bug-Reports schreiben u.v.m.
 
 
 Demo: Fork
@@ -78,14 +78,14 @@ Demo: Fork
 Demo: Pull Requests
 -------------------
 
-Ablauf ohne Github:
+Ablauf ohne GitHub:
 
 .. code-block:: bash
 
     # Auf Seite des Forkers (bob)
     $ git request-pull HEAD^1 https://github.com/<bob>/repo.git > mail
     The following changes since commit 04ca9db3149956ed7670d699cb4b4328386b88e1:
-      Sophisticated Commit Message. (2013-05-11 00:36:56 +0200)
+      Sophisticated commit message. (2013-05-11 00:36:56 +0200)
 
     are available in the git repository at:
       https://github.com/<bob>/repo.git master
@@ -94,9 +94,9 @@ Ablauf ohne Github:
     $ git remote add bob https://github.com/<bob>/repo.git
     $ git pull bob 
 
-Ablauf mit Github:
+Ablauf mit GitHub:
 
-    - ``bob`` macht über Github einen Pull Request.
+    - ``bob`` macht über GitHub einen Pull Request.
     - ``alice`` klickt auf ``Confirme Merge``.
 
 
@@ -176,8 +176,8 @@ Demo: Sonstiges #2
 
 - **Soziales:**
 
-    - Andere user kann man ``followen``. 
-    - Andere repos kann man ``watchen``.
+    - Andere User kann man ``followen``. 
+    - Andere Repos kann man ``watchen``.
     - Anzeige von Aktivitäten anderer auf dem Dashboard_.
 
 .. _Dashboard: https://github.com/
@@ -192,14 +192,14 @@ Möglichkeit um…
 
 - …GitHub in Anwendungen zu integrieren.
 - …Volltextsuche auf allen Repositories.
-- …Statisken.
+- …Statisten.
 - …Activities. (Alternative zu ``git hooks``)
-- …Aktionen zu triggern (zb. Pull Requests).
+- …Aktionen zu triggern (z.B. Pull Request).
 
 .. code-block:: bash
 
     # Alle Repositories eines Users auflisten
-    $ curl -q https://api.github.com/users/studentkittens/repos \
+    $ curl -q https://api.github.com/users/qitta/repos \
       | grep 'full_name'
     "full_name": "qitta/dotfiles",
     "full_name": "qitta/foozel",
@@ -233,7 +233,7 @@ Demo: Cloud-Hooks
   
   - Twitter_ 
 
-       Commit Messages auf Twitter posten.
+       Commit-Messages auf Twitter posten.
 
   - TravisCI_ 
 
@@ -245,7 +245,7 @@ Demo: Cloud-Hooks
 
   - Bugzilla_ 
 
-        Linking von Bugs in Commit Message.
+        Linking von Bugs in Commit-Message.
 
   - Email_
 

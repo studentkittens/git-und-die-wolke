@@ -145,7 +145,7 @@ Warum überhaupt das Ganze, es gibt doch Dropbox?
     * Verschlüsselung, Vertrauensstufen, Sharing etc.
     * Verschiedene ,,Repository Groups'' definierbar und kombinierbar → 
       verschiedene Szenarien abdeckbar.
-    * Praktisch viele Features die man von einer gutem Storagelösung erwartet
+    * Praktisch viele Features die man von einer gutem Storage-Lösung erwartet
 
 
 --------------------------------

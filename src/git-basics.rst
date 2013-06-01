@@ -68,7 +68,7 @@ Git Basics: Ab in die Shell
     Receiving objects: 100% (94/94), 5.70 MiB | 1.60 MiB/s, done.
     Resolving deltas: 100% (36/36), done.
 
-* Url-Shema Beispiele: ::
+* URL-Schema Beispiele: ::
    
      git://github.com/qitta/foozel.git         → Git [Read only]
      git@github.com:sahib/rmlint.git           → SSH [Preferred]
@@ -144,7 +144,7 @@ Was ist ein ``diff``?
 
     .. code-block:: bash
 
-        # Bestimmte commit zeigen
+        # Bestimmten Commit zeigen
         $ git show a2fe0bc
         <dasselbe wie oben>
 
@@ -157,13 +157,13 @@ Früher oder später will man etwas berichtigen
 
 .. code-block:: bash
 
-    # Letzte commit messages berichtigen
+    # Letzte Commit-Messages berichtigen
     # to amend == berichtigen.
     $ git commit --amend
 
 .. code-block:: bash
 
-    # änderungen an einem file zurücksetzen
+    # Änderungen an einem file zurücksetzen
     # Working Tree -> Unmodified
     $ git checkout -- your_file.txt
 
@@ -184,7 +184,7 @@ Früher oder später will man etwas berichtigen
 Die Objektdatenbank #1
 ----------------------
 
-Vier unterschiedliche Objektypen: 
+Vier unterschiedliche Objekttypen: 
 
 * Blobs (Dateien)
 * Trees (Verzeichnisse)
@@ -406,7 +406,7 @@ Source:
             is_odd(argc - 1) ? "Yes" : "No");
     }
 
-Testcase:
+Test case:
 
 .. code-block:: c
 
@@ -448,7 +448,7 @@ Testcase:
 
 Was lernt man draus?
 
-    * Immer kleine commits machen!
+    * Immer kleine Commits machen!
     * Nehmt euch Zeit für eine *sinnvolle* Commit-Messages! Schlechte Beispiele
       (**\***):
 
@@ -464,7 +464,7 @@ Was lernt man draus?
 ``git tag``
 -----------
 
-- Manchmal muss man einen commit *taggen*.
+- Manchmal muss man einen Commit *taggen*.
 - Wie ``branches``, nur *fest*.
 - Beispielsweise mit einer Version: **1.2 beta**
 
@@ -532,11 +532,11 @@ Best Practices #1
 
 - ``.gitignore`` nutzen (und ``git clean``!).
   
-    - Keinen autogenerierten Code/Projektdateien committen.
+    - Keinen auto generierten Code/Projektdateien committen.
     - Wenn nicht vermeidbar dann in eigenen Commit.
     - Für Dokumentation am besten eigenen Branch nutzen!
 
-- Sinnvolle commit messages.
+- Sinnvolle Commit-Messages.
 
     - Siehe Folie für ``git bisect 4``.
 
@@ -550,7 +550,7 @@ Best Practices #2
 
     - Macht Debugging/Übersicht einfacher.
 
-- Review Code before Commit.
+- Review Code before commit.
 
     - Keine ``Fixed up previous commit`` Messages.
 
