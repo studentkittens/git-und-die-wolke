@@ -139,7 +139,7 @@ Warum überhaupt das Ganze, es gibt doch Dropbox?
 
 **Interessante Features die es bisher so nicht gibt:**
 
-    * Verschiedene *,,cloud remotes''* nutzbar z.B. ``box.com``, ``rsync.net``, Amazon S3
+    * Verschiedene *,,cloud remotes''* nutzbar z.B. ``box.com``, ``rsync.net``, ``Amazon S3``
     * Kontrolle liegt beim Benutzer, nicht Storage Anbieter - interessant für
       Unternehmen mit kritischen Daten.
     * Verschlüsselung, Vertrauensstufen, Sharing etc.

@@ -253,6 +253,6 @@ Demo: Cloud-Hooks
 
 .. _Twitter: https://twitter.com/cloudkittens
 .. _TravisCI: https://travis-ci.org
-.. _ReadTheDocs: https://readthedocs.org/
+.. _ReadTheDocs: https://git-python-project.readthedocs.org/en/latest/
 .. _Bugzilla: http://bugzilla.org
 .. _Email: http://de.wikipedia.org/wiki/E-Mail
