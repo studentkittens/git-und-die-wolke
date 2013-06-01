@@ -1,17 +1,20 @@
-VM Git und die Wolke
---------------------
+=================
+Git und die Wolke
+=================
 
 Dekstop
 -------
+
 Auf dem Desktop findet Ihr:
 
 	* Unseren Vortragsordner ,,git-und-die-wolke''
-	* Ein git cheatsheet mit den wichtigsten git commands im Überblick
-	* Ein shell cheatsheet, Übersicht Linux Filesystem Navigation Commandos
+	* git-cheatsheet.pdf, ein git cheatsheet mit den wichtigsten git commands im Überblick
+	* ShellIntro.pdf, ein shell cheatsheet, falls überhaupt benötigt (ab Seite 8, Punkt 3.2 ,,Navigating the Linux Filesystem)
 
 
 Toolbar
 -------
+
 Wenn ihr mit der Maus nach oben links geht, erscheint eine Toolbar.
 In dieser findet ihr die folgenden Tools in der Reihenfolge von oben
 unten gelistet:
@@ -26,6 +29,7 @@ unten gelistet:
 
 Commandline
 -----------
+
 In der Commandozeile findet ihr folgende Editoren:
 
 	* nano (minimalistischer Editor)
@@ -34,8 +38,7 @@ In der Commandozeile findet ihr folgende Editoren:
 
 Git-Tools
 ---------
-Standalone Commandline Tools um ein Git Repository zu browsen:
-(Wenn man in einem git repository ist einfach über die Konsole starten.)
+Standalone Commandline Tools um ein Git Repository zu browsen (Wenn man in einem git repository ist einfach über die Konsole starten):
 
 	* gitg (Portabel / Gnome)
 	* giggle (Protabel / Gnome)
