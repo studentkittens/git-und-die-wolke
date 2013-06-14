@@ -73,4 +73,14 @@ Warum git? Warum nicht X?
 
 .. raw:: html
 
-    <center><a href="http://git-scm.com/about">Git About</a></center>
+    <center>
+    <a href="http://git-scm.com/about">Git About</a>
+
+|
+|
+
+Weiter mit: :ref:`git_basics`
+
+.. raw:: html
+
+    </center>

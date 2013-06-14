@@ -1,3 +1,5 @@
+.. _git_uebung:
+
 =========================
 Lasst die Spiele beginnen
 =========================

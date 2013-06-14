@@ -1,6 +1,9 @@
+.. _git_basics: 
+
 ===========================
 Git Basics: Ab in die Shell
 ===========================
+
 
 .. figure:: /_static/gitcloud.png
    :class: fill
@@ -26,6 +29,34 @@ Git Basics: Ab in die Shell
 
 .. _GoogleTalk: http://www.youtube.com/watch?v=4XpnKHJAok8&t=8m20s
 
+------------------
+Zentraler Workflow
+------------------
+   
+.. rst-class:: build
+
+- Zentraler Workflow wie bei CVS
+- Viele Entwickler arbeiten mit einem Repository
+- Jeder Entwickler hat nur eine unvollständige Kopie
+
+.. image:: /_static/central.png
+    :align: center
+    :width: 100%
+
+--------------------
+Dezentraler Workflow
+--------------------
+   
+.. rst-class:: build
+
+- ``git`` typischer Ablauf.
+- Jeder Entwickler hat ein Repository
+- Jeder Entwickler hat eine volle Kopie
+
+.. image:: /_static/decentral.png
+    :align: center
+    :width: 105%
+
 --------------
 ``git init``
 --------------
@@ -50,31 +81,6 @@ Git Basics: Ab in die Shell
     │   └── refs
     ├── objects
     └── refs
-
---------------
-``git clone``
---------------
-
-* Klone ein Repository
-
-.. code-block:: bash
-
-    $ git clone git://github.com/studentkittens/git-und-die-wolke.git
-
-    Cloning into 'git-und-die-wolke'...
-    remote: Counting objects: 94, done.
-    remote: Compressing objects: 100% (72/72), done.
-    remote: Total 94 (delta 36), reused 72 (delta 16)
-    Receiving objects: 100% (94/94), 5.70 MiB | 1.60 MiB/s, done.
-    Resolving deltas: 100% (36/36), done.
-
-* URL-Schema Beispiele: ::
-   
-     git://github.com/qitta/foozel.git         → Git [Read only]
-     git@github.com:sahib/rmlint.git           → SSH [Preferred]
-     https://github.com/tmarc/advanced-ios.git → HTTPS [Notlösung]
-     git clone file:///opt/git/project.git     → Lokal 
-
 
 -----------
 ``git add``
@@ -262,35 +268,35 @@ Branches führt man zusammen mit:
     - Andere Zeile? ``git`` merged es automatisch. 
     - Selbe Zeile? Uh-oh.
 
+--------------
+``git clone``
+--------------
 
------------------
-``git remote #1``
------------------
+* Klone ein Repository
+
+.. code-block:: bash
+
+    $ git clone git://github.com/studentkittens/git-und-die-wolke.git
+
+    Cloning into 'git-und-die-wolke'...
+    remote: Counting objects: 94, done.
+    remote: Compressing objects: 100% (72/72), done.
+    remote: Total 94 (delta 36), reused 72 (delta 16)
+    Receiving objects: 100% (94/94), 5.70 MiB | 1.60 MiB/s, done.
+    Resolving deltas: 100% (36/36), done.
+
+* URL-Schema Beispiele: ::
    
-.. rst-class:: build
+     git://github.com/qitta/foozel.git         → Git [Read only]
+     git@github.com:sahib/rmlint.git           → SSH [Preferred]
+     https://github.com/tmarc/advanced-ios.git → HTTPS [Notlösung]
+     git clone file:///opt/git/project.git     → Lokal 
 
-- Bis jetzt passierte alles lokal.
-- Bis auf ``git clone``.
+--------------
+``git remote``
+--------------
 
-.. image:: /_static/central.png
-    :align: center
-    :width: 105%
-
------------------
-``git remote #2``
------------------
-
-Und jetzt dezentral:
-
-.. image:: /_static/decentral.png
-    :align: center
-    :width: 105%
-
------------------
-``git remote #3``
------------------
-
-Und jetzt in ``Git-Speak``?
+Entfernte Repositories verwalten:
 
 .. code-block:: bash
 
@@ -376,23 +382,6 @@ Hilfe?!
 ``git bisect #1``
 -----------------
 
-    ``Find by binary search the change that introduced a bug``
-
-**Aufgabe:**
-
-    - Finde heraus wann ein Fehler eingeführt wurde.
-    - Schaue dir an was damals geändert wurde.
-    - Leite daraus ab was der Fehler ist.
-
-**Funktionsweise:**
-
-    - Festlegen eines good/bad commits
-    - Auschecken der Mitte, Testen, Links oder Rechts weitersuchen.
-
------------------
-``git bisect #2``
------------------
-
 Source:
 
 .. code-block:: c
@@ -412,9 +401,27 @@ Test case:
 
     void test_is_odd(void) {
         for(int i = -20; i < 20; ++i) {
-            assert(is_odd(i) == (i % 2 == 1));
+            assert((is_odd(i) != 0) == (i % 2 != 0));
         }
     }
+
+-----------------
+``git bisect #2``
+-----------------
+
+    ``Find by binary search the change that introduced a bug``
+
+**Aufgabe:**
+
+    - Finde heraus wann ein Fehler eingeführt wurde.
+    - Schaue dir an was damals geändert wurde.
+    - Leite daraus ab was der Fehler ist.
+
+**Funktionsweise:**
+
+    - Festlegen eines good/bad commits
+    - Auschecken der Mitte, Testen, Links oder Rechts weitersuchen.
+
 
 -----------------
 ``git bisect #3``
@@ -459,6 +466,31 @@ Was lernt man draus?
     * ``git bisect`` ist ein gutes Argument für Unit-Tests.
 
 \* (*Noch mehr davon:* http://whatthecommit.com/)
+
+-----------------------
+Suchen und Beschuldigen
+-----------------------
+
+Suche ``background:`` in allen ``.css`` Dateien. 
+
+.. code-block:: bash
+
+    $ git grep -n 'background:' -- '*.css'
+    src/custom.css:56: background: -webkit-radial-gradient(#9cf, #369);
+    src/custom.css:57: background:    -moz-radial-gradient(#9cf, #369);
+    src/custom.css:58: background:         radial-gradient(#9cf, #369);
+
+Herausfinden wer wann etwas geändert hat:
+
+.. code-block:: bash
+
+    $ git blame -L 56,58 src/custom.css
+    # SHA1   (Autor LN) Content
+    77a79bbc (Elch  56) background: -webkit-radial-gradient(#9cf, #369);
+    64ac73cb (Katze 57) background:    -moz-radial-gradient(#9cf, #369);
+    77a79bbc (Elch  58) background:         radial-gradient(#9cf, #369);
+
+→ Der Autor ``Katze`` ist für den Mozilla-Support zuständig.
 
 -----------
 ``git tag``
@@ -558,6 +590,34 @@ Best Practices #2
 
     - Damit der ``master`` branch benutzbar bleibt.
 
+--
+……
+--
+
+.. figure:: /_static/af.jpg
+   :class: fill
+
+-------------
+``git fetch``
+-------------
+
+.. rst-class:: build
+
+- ``git pull`` ist ein ``git fetch && git merge``.
+- Warum sollte man das wollen?
+- Wenn man nicht will dass automatisch gemerged wird.
+- Beispiel: 
+
+  .. code-block:: bash
+
+    $ git fetch origin 
+    $ git checkout origin/master
+    $ # look around
+    $ # if satisfied:
+    $ git checkout master
+    $ git merge origin/master
+
+
 -----------------
 ``git rebase #1``
 -----------------
@@ -607,54 +667,15 @@ Mit Rebase:
 .. figure:: /_static/thanksobama.jpg
    :class: fill
 
------------------------
-Suchen und Beschuldigen
------------------------
+----------------------------------------------
+Ein Exkurs zu Storage as a Service mit ``git``
+----------------------------------------------
 
-Suche ``background:`` in allen ``.css`` Dateien. 
+|
+|
+|
+|
+|
+|
 
-.. code-block:: bash
-
-    $ git grep -n 'background:' -- '*.css'
-    src/custom.css:56: background: -webkit-radial-gradient(#9cf, #369);
-    src/custom.css:57: background:    -moz-radial-gradient(#9cf, #369);
-    src/custom.css:58: background:         radial-gradient(#9cf, #369);
-
-Herausfinden wer wann etwas geändert hat:
-
-.. code-block:: bash
-
-    $ git blame -L 56,58 src-git-basiscs.rst
-    # SHA256 (Autor LN) Content
-    77a79bbc (Elch  56) background: -webkit-radial-gradient(#9cf, #369);
-    64ac73cb (Katze 57) background:    -moz-radial-gradient(#9cf, #369);
-    77a79bbc (Elch  58) background:         radial-gradient(#9cf, #369);
-
-→ Der Autor ``Katze`` ist für den Mozilla-Support zuständig.
-
---
-……
---
-
-.. figure:: /_static/af.jpg
-   :class: fill
-
--------------
-``git fetch``
--------------
-
-.. rst-class:: build
-
-- ``git pull`` ist ein ``git fetch && git merge``.
-- Warum sollte man das wollen?
-- Wenn man nicht will dass automatisch gemerged wird.
-- Beispiel: 
-
-  .. code-block:: bash
-
-    $ git fetch origin 
-    $ git checkout origin/master
-    $ # look around
-    $ # if satisfied:
-    $ git checkout master
-    $ git merge origin/master
+SaaS mit ``git-annex``: :ref:`git_annex`

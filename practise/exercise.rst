@@ -30,11 +30,11 @@ Folgende Schritte sind mit Hilfe des Cheatsheets durchzuführen:
        Endung ``.txt``. Stell sicher dass es funktioniert hat. Wird ``README.txt`` ignoriert?
     6) **Branching:**
         
-       1) Lege einen neuen Branch ``readme-improv`` an.
+       1) Lege einen neuen Branch ``readme-improve`` an.
        2) Mach einen neuen commit, und verändere in diesem ``README.txt``
        3) Wechsel zum ``master`` branch.
        4) Mache auch dort einen Commit in dem du ``README.txt`` veränderst.
-       5) Merge ``master`` mit ``readme-improv``!
+       5) Merge ``master`` mit ``readme-improve``!
           Fortgeschrittene können hier auch ``git rebase`` nutzen.
 
 |

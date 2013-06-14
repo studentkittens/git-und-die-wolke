@@ -1,3 +1,5 @@
+.. _git_annex:
+
 =============================
 Git Annex: Dropbox fuer Harte
 =============================
@@ -169,3 +171,15 @@ Power of git-annex for everybody
 .. image:: /_static/annex.png
    :align: center
    :width: 200px
+
+------------------------------
+Nun zum Kernthema des Vortrags
+------------------------------
+
+|
+|
+|
+|
+|
+
+Code Hosting mit Github: :ref:`github`

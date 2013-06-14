@@ -1,3 +1,5 @@
+.. _github:
+
 =======================
 Github: Ab in die Wolke
 =======================
@@ -83,16 +85,16 @@ Ablauf ohne GitHub:
 .. code-block:: bash
 
     # Auf Seite des Forkers (bob)
-    $ git request-pull HEAD^1 https://github.com/<bob>/repo.git > mail
+    $ git request-pull HEAD^1 https://github.com/<bob>/repo.git 
     The following changes since commit 04ca9db3149956ed7670d699cb4b4328386b88e1:
       Sophisticated commit message. (2013-05-11 00:36:56 +0200)
-
     are available in the git repository at:
       https://github.com/<bob>/repo.git master
-
-    # Auf Seite des Annehmers (alice)
+    $ git push
+    # Bob sendet diesen Text an Alice
+    # Auf Seite des Annehmers (alice):
     $ git remote add bob https://github.com/<bob>/repo.git
-    $ git pull bob 
+    $ git pull bob 04ca9d
 
 Ablauf mit GitHub:
 
@@ -256,3 +258,15 @@ Demo: Cloud-Hooks
 .. _ReadTheDocs: https://git-python-project.readthedocs.org/en/latest/
 .. _Bugzilla: http://bugzilla.org
 .. _Email: http://de.wikipedia.org/wiki/E-Mail
+
+-------------------------
+Meine Damen und Herren...
+-------------------------
+
+|
+|
+|
+|
+|
+
+Die Haupattraktion des Tages: :ref:`git_uebung`
