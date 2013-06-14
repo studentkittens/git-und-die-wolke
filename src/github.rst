@@ -56,7 +56,7 @@ Was kann Github?
 Demo: Nutzerprofil
 ------------------
 
-- Git kennt nur den namen und Email des Nutzers.
+- Git kennt nur den Namen und Email des Nutzers.
 
 .. code-block:: bash
 

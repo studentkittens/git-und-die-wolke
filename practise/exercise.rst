@@ -67,7 +67,7 @@ gemeinsam mal probieren.
             $ git clone https://github.com/<euer_user>/git-python-project.git
             $ cd git-python-project
 
-    5) Wer hiermit fertig kriegt von uns einen Task (meldet euch!).
+    5) Wer hiermit fertig ist kriegt von uns einen Task (meldet euch!).
 
        Jeder Task besteht aus einer fehlerhaften Python Funktion. Eure Aufgabe
        ist es nun diese entweder durch Überlegung zu reparieren, oder unter
