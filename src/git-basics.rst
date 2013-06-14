@@ -21,7 +21,7 @@ Git Basics: Ab in die Shell
 
 **Erklärung:**
 
-      Linus Torvalds on GoogleTalk_.
+      Linus on GoogleTalk_.
 
 
 .. _GoogleTalk: http://www.youtube.com/watch?v=4XpnKHJAok8&t=8m20s
