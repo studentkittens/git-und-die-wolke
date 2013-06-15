@@ -1,0 +1,3 @@
+[submodule "build/slides"]
+	path = build/slides
+	url = https://github.com/studentkittens/git-und-die-wolke.git
