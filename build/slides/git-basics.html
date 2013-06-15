@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Git Basics: Ab in die Shell &mdash; git-und-die-wolke 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    <link rel="top" title="git-und-die-wolke 0.1 documentation" href="index.html" />
+    <link rel="next" title="Git Annex: Dropbox fuer Harte" href="git-annex.html" />
+    <link rel="prev" title="Einfuehrung" href="einfuehrung.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="git-basics-ab-in-die-shell">
+<span id="git-basics"></span><h1>Git Basics: Ab in die Shell</h1>
+<div class="figure">
+<img alt="_images/gitcloud.png" class="fill" src="_images/gitcloud.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="was-ist-git">
+<h2>Was ist git?</h2>
+<blockquote>
+<div><ul class="simple">
+<li>Ein Versionsverwaltungssystem</li>
+<li>Ein Protokoll</li>
+<li>Ein abstraktes Filesystem</li>
+<li>Linus: <tt class="docutils literal"><span class="pre">A</span> <span class="pre">distributed</span> <span class="pre">stupid</span> <span class="pre">content</span> <span class="pre">tracker</span></tt></li>
+</ul>
+</div></blockquote>
+<p><strong>Was ist es nicht?</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>CVS (<tt class="docutils literal"><span class="pre">WWCVSND</span></tt>)</li>
+<li>SVN (<tt class="docutils literal"><span class="pre">CVS</span> <span class="pre">done</span> <span class="pre">right.</span></tt>)</li>
+</ul>
+</div></blockquote>
+<p><strong>Erklärung:</strong></p>
+<blockquote>
+<div>Linus on <a class="reference external" href="http://www.youtube.com/watch?v=4XpnKHJAok8&amp;t=8m20s">GoogleTalk</a>.</div></blockquote>
+
+</article>
+<article class="slide level-2" id="zentraler-workflow">
+<h2>Zentraler Workflow</h2>
+<ul class="build simple">
+<li>Zentraler Workflow wie bei CVS</li>
+<li>Viele Entwickler arbeiten mit einem Repository</li>
+<li>Jeder Entwickler hat nur eine unvollständige Kopie</li>
+</ul>
+<a class="reference internal image-reference" href="_images/central.png"><img alt="_images/central.png" class="align-center" src="_images/central.png" style="width: 100%;" /></a>
+
+</article>
+<article class="slide level-2" id="dezentraler-workflow">
+<h2>Dezentraler Workflow</h2>
+<ul class="build simple">
+<li><tt class="docutils literal"><span class="pre">git</span></tt> typischer Ablauf.</li>
+<li>Jeder Entwickler hat ein Repository</li>
+<li>Jeder Entwickler hat eine volle Kopie</li>
+</ul>
+<a class="reference internal image-reference" href="_images/decentral.png"><img alt="_images/decentral.png" class="align-center" src="_images/decentral.png" style="width: 105%;" /></a>
+
+</article>
+<article class="slide level-2" id="git-init">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">init</span></tt></h2>
+<ul class="simple">
+<li>Lege ein neues Git-Repository in <tt class="docutils literal"><span class="pre">your-repo</span></tt> an.</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir your-repo <span class="o">&amp;&amp;</span> <span class="nb">cd </span>your-repo
+<span class="nv">$ </span>git init .
+<span class="nv">$ </span>ls --all
+.  ..  .git
+<span class="nv">$ </span>tree .git
+.git
+├── branches
+├── config
+├── HEAD
+├── index
+├── <span class="o">[</span>...<span class="o">]</span>
+├── logs
+│   ├── HEAD
+│   └── refs
+├── objects
+└── refs
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="git-add">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git add <span class="o">[</span>your-file-or-dir-here<span class="o">]</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/untracked_to_staged.png"><img alt="_images/untracked_to_staged.png" class="align-center" src="_images/untracked_to_staged.png" style="width: 80%;" /></a>
+<p>Alle Bereiche interaktiv als HTML:</p>
+<blockquote>
+<div><a class="reference external" href="http://ndpsoftware.com/git-cheatsheet.html">http://ndpsoftware.com/git-cheatsheet.html</a></div></blockquote>
+
+</article>
+<article class="slide level-2" id="git-commit">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">&quot;Hello Phil!&quot;</span> &gt; README
+<span class="nv">$ </span>git add README
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git status
+<span class="c"># On branch master</span>
+<span class="c"># Changes to be committed:</span>
+<span class="c">#   new file:   README</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git commit --all --message <span class="s2">&quot;commit message&quot;</span>  <span class="c"># ausgechrieben</span>
+<span class="nv">$ </span>git commit -am <span class="s2">&quot;commit message&quot;</span>              <span class="c"># oder kürzer</span>
+<span class="nv">$ </span>git commit -a                                <span class="c"># lange messages</span>
+<span class="o">[</span>Editor öffnet sich<span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git status
+<span class="c"># On branch master</span>
+nothing to commit, working directory clean
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="was-ist-ein-diff">
+<h2>Was ist ein <tt class="docutils literal"><span class="pre">diff</span></tt>?</h2>
+<ul class="build">
+<li><p class="first">Ein <tt class="docutils literal"><span class="pre">diff</span></tt> ist die Änderung zwischen zwei Änderungen.</p>
+</li>
+<li><p class="first">Errr… Wat?</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># Zeige alle Änderungen seit dem letzten Commit</span>
+<span class="nv">$ </span>git diff
+diff --git a/TODO.list b/TODO.list
+index e6c2b18..a2fe0bc 100644
+--- a/TODO.list
++++ b/TODO.list
+@@ -1,21 +1,20 @@
++✓ Hinweise in der Versionshistorie verstecken
+-✓ Zettelchen schreiben
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Bestimmten Commit zeigen</span>
+<span class="nv">$ </span>git show a2fe0bc
+&lt;dasselbe wie oben&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="freunde-von-git-commit">
+<h2>Freunde von <tt class="docutils literal"><span class="pre">git</span> <span class="pre">commit</span></tt></h2>
+<p>Früher oder später will man etwas berichtigen</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Letzte Commit-Messages berichtigen</span>
+<span class="c"># to amend == berichtigen.</span>
+<span class="nv">$ </span>git commit --amend
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Änderungen an einem file zurücksetzen</span>
+<span class="c"># Working Tree -&gt; Unmodified</span>
+<span class="nv">$ </span>git checkout -- your_file.txt
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># &quot;git add&quot; rückgängig machen</span>
+<span class="c"># Index -&gt; Working Tree</span>
+<span class="nv">$ </span>git reset your_file.txt
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git stash       <span class="c"># Änderungen kurz wegsichern</span>
+<span class="nv">$ </span>git stash pop   <span class="c"># … später wieder hervorholen</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="die-objektdatenbank-1">
+<h2>Die Objektdatenbank #1</h2>
+<p>Vier unterschiedliche Objekttypen:</p>
+<ul class="simple">
+<li>Blobs (Dateien)</li>
+<li>Trees (Verzeichnisse)</li>
+<li>Commits (Änderungen)</li>
+<li>Referenzen (Branches oder Tags)</li>
+</ul>
+<a class="reference internal image-reference" href="_images/simple_tree.png"><img alt="_images/simple_tree.png" class="align-center" src="_images/simple_tree.png" style="width: 60%;" /></a>
+
+</article>
+<article class="slide level-2" id="die-objektdatenbank-2">
+<h2>Die Objektdatenbank #2</h2>
+<a class="reference internal image-reference" href="_images/simple_commit.png"><img alt="_images/simple_commit.png" class="align-center" src="_images/simple_commit.png" style="width: 100%;" /></a>
+
+</article>
+<article class="slide level-2" id="die-objektdatenbank-3">
+<h2>Die Objektdatenbank #3</h2>
+<a class="reference internal image-reference" href="_images/simple_branch.png"><img alt="_images/simple_branch.png" class="align-center" src="_images/simple_branch.png" style="width: 100%;" /></a>
+
+</article>
+<article class="slide level-2" id="git-branching">
+<h2>Git Branching</h2>
+<div class="figure align-center">
+<img alt="_images/branch.png" class="fill" src="_images/branch.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="branches-1">
+<h2>Branches #1</h2>
+<p>Branches erstellt man mit:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git checkout -b &lt;branch-name&gt;
+</pre></div>
+</div>
+<p>In bestehende branches wechseln:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git checkout &lt;branch-name&gt;
+</pre></div>
+</div>
+<p>Branches auflisten:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git branch --all
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="branches-2">
+<h2>Branches #2</h2>
+<p>Branches führt man zusammen mit:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git merge &lt;target-branch&gt;
+</pre></div>
+</div>
+<ul class="build">
+<li><p class="first">Dabei können böse Dinge passieren.</p>
+</li>
+<li><p class="first">Dinge die <tt class="docutils literal"><span class="pre">git</span></tt>-Anfänger zu CVS-Usern werden lässt.</p>
+</li>
+<li><p class="first">Es können <strong>Merge-Conflicts</strong> entstehen.</p>
+</li>
+<li><p class="first">Was passiert wenn in beiden <tt class="docutils literal"><span class="pre">branches</span></tt> dasselbe File geändert wurde?</p>
+<blockquote>
+<div><ul class="simple">
+<li>Andere Zeile? <tt class="docutils literal"><span class="pre">git</span></tt> merged es automatisch.</li>
+<li>Selbe Zeile? Uh-oh.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="git-clone">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span></tt></h2>
+<ul class="simple">
+<li>Klone ein Repository</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/studentkittens/git-und-die-wolke.git
+
+Cloning into <span class="s1">&#39;git-und-die-wolke&#39;</span>...
+remote: Counting objects: 94, <span class="k">done</span>.
+remote: Compressing objects: 100% <span class="o">(</span>72/72<span class="o">)</span>, <span class="k">done</span>.
+remote: Total 94 <span class="o">(</span>delta 36<span class="o">)</span>, reused 72 <span class="o">(</span>delta 16<span class="o">)</span>
+Receiving objects: 100% <span class="o">(</span>94/94<span class="o">)</span>, 5.70 MiB | 1.60 MiB/s, <span class="k">done</span>.
+Resolving deltas: 100% <span class="o">(</span>36/36<span class="o">)</span>, <span class="k">done</span>.
+</pre></div>
+</div>
+<ul>
+<li><p class="first">URL-Schema Beispiele:</p>
+<div class="highlight-python"><pre>git://github.com/qitta/foozel.git         → Git [Read only]
+git@github.com:sahib/rmlint.git           → SSH [Preferred]
+https://github.com/tmarc/advanced-ios.git → HTTPS [Notlösung]
+git clone file:///opt/git/project.git     → Lokal</pre>
+</div>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="git-remote">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">remote</span></tt></h2>
+<p>Entfernte Repositories verwalten:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Alle remotes auflisten</span>
+<span class="nv">$ </span>git remote -v
+origin  git@github.com:studentkittens/git-und-die-wolke.git <span class="o">(</span>fetch<span class="o">)</span>
+origin  git@github.com:studentkittens/git-und-die-wolke.git <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Neues remote adden</span>
+<span class="nv">$ </span>git remote add nullcat git@nullcat.de
+<span class="nv">$ </span>git remote -v
+…
+nullcat git@nullcat.de <span class="o">(</span>fetch<span class="o">)</span>
+nullcat git@nullcat.de <span class="o">(</span>push<span class="o">)</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Bestehendes remote verändern</span>
+<span class="nv">$ </span>git remote <span class="nb">set</span>-url nullcat https://git.nullcat.de
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="git-push">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git push <span class="o">[</span>&lt;remote&gt; <span class="o">[</span>&lt;<span class="nb">local</span>-branch&gt;<span class="o">]]</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git push
+<span class="nv">$ </span>git push origin
+<span class="nv">$ </span>git push origin master
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/push.jpg"><img alt="_images/push.jpg" class="align-center" src="_images/push.jpg" style="width: 55%;" /></a>
+
+</article>
+<article class="slide level-2" id="git-pull">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt></h2>
+<ul class="build">
+<li><p class="first">Das logische Äquivalent zu <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt>.</p>
+</li>
+<li><p class="first">Zieht Änderungen von einem <strong>remote</strong>.</p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git pull &lt;remote&gt; &lt;remote-branch&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Auch hier können <strong>Merge-Conflicts</strong> entstehen.</p>
+</li>
+<li><p class="first">Vor einem <tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span></tt> sollte man immer ein <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt> machen.</p>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="hilfe">
+<h2>Hilfe?!</h2>
+<ul class="build">
+<li><p class="first">Das ist ja alles schön und gut…</p>
+</li>
+<li><p class="first">…aber ich versteh kein Wort.</p>
+</li>
+<li><p class="first">Hier wirst du geholfen:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">manpages:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git <span class="nb">help</span> &lt;commando&gt;
+<span class="nv">$ </span>git <span class="nb">help </span>tutorial
+</pre></div>
+</div>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.git-scm.com/documentation">http://www.git-scm.com/documentation</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://de.gitready.com/">http://de.gitready.com/</a></p>
+</li>
+<li><p class="first">Es gibt eine Menge Bücher.</p>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="git-bisect-1">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">#1</span></tt></h2>
+<p>Source:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">bool</span> <span class="nf">is_odd</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">!</span><span class="n">number</span> <span class="o">%</span> <span class="mi">2</span><span class="p">;</span> <span class="cm">/* Wrong! */</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Odd numbers of arguments? %d!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+        <span class="n">is_odd</span><span class="p">(</span><span class="n">argc</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">?</span> <span class="s">&quot;Yes&quot;</span> <span class="o">:</span> <span class="s">&quot;No&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Test case:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="kt">void</span> <span class="nf">test_is_odd</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">assert</span><span class="p">((</span><span class="n">is_odd</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">));</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="git-bisect-2">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">#2</span></tt></h2>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">Find</span> <span class="pre">by</span> <span class="pre">binary</span> <span class="pre">search</span> <span class="pre">the</span> <span class="pre">change</span> <span class="pre">that</span> <span class="pre">introduced</span> <span class="pre">a</span> <span class="pre">bug</span></tt></div></blockquote>
+<p><strong>Aufgabe:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Finde heraus wann ein Fehler eingeführt wurde.</li>
+<li>Schaue dir an was damals geändert wurde.</li>
+<li>Leite daraus ab was der Fehler ist.</li>
+</ul>
+</div></blockquote>
+<p><strong>Funktionsweise:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Festlegen eines good/bad commits</li>
+<li>Auschecken der Mitte, Testen, Links oder Rechts weitersuchen.</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="git-bisect-3">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">#3</span></tt></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git bisect start HEAD HEAD^^^
+<span class="nv">$ </span>git bisect run make <span class="nb">test</span>
+<span class="c"># ... viel output von $(make test) ...</span>
+5145c8 is the first bad commit
+<span class="s1">&#39;bisect run&#39;</span> erfolgreich ausgeführt
+<span class="nv">$ </span>git bisect reset    <span class="c"># Kehre zur normalen Arbeit zurück</span>
+<span class="nv">$ </span>git show 5145c8     <span class="c"># Zeige unterschiede im bad commit</span>
+commit 5145c8781e30057c8e2058d1c361363e213a17f4
+Date:   Fri May 3 15:47:38 2013 +0200
+
+    Made is_odd<span class="o">()</span> better looking
+
+diff --git a/is_odd.c b/is_odd.c
+
+ bool is_odd<span class="o">(</span>int number<span class="o">)</span>
+ <span class="o">{</span>
+-    <span class="k">return </span>number % <span class="nv">2</span> <span class="o">==</span> 1;
++    <span class="k">return</span> !number % 2;
+ <span class="o">}</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="git-bisect-4">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">#4</span></tt></h2>
+<p>Was lernt man draus?</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Immer kleine Commits machen!</p>
+</li>
+<li><p class="first">Nehmt euch Zeit für eine <em>sinnvolle</em> Commit-Messages! Schlechte Beispiele
+(<strong>*</strong>):</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Some changes</strong> - Riesiger diff.</li>
+<li><strong>minor changes</strong> - Complete Rewrite.</li>
+<li><strong>Merge.</strong> - Manuelles Merging.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">git</span> <span class="pre">bisect</span></tt> ist ein gutes Argument für Unit-Tests.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>* (<em>Noch mehr davon:</em> <a class="reference external" href="http://whatthecommit.com/">http://whatthecommit.com/</a>)</p>
+
+</article>
+<article class="slide level-2" id="suchen-und-beschuldigen">
+<h2>Suchen und Beschuldigen</h2>
+<p>Suche <tt class="docutils literal"><span class="pre">background:</span></tt> in allen <tt class="docutils literal"><span class="pre">.css</span></tt> Dateien.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git grep -n <span class="s1">&#39;background:&#39;</span> -- <span class="s1">&#39;*.css&#39;</span>
+src/custom.css:56: background: -webkit-radial-gradient<span class="o">(</span><span class="c">#9cf, #369);</span>
+src/custom.css:57: background:    -moz-radial-gradient<span class="o">(</span><span class="c">#9cf, #369);</span>
+src/custom.css:58: background:         radial-gradient<span class="o">(</span><span class="c">#9cf, #369);</span>
+</pre></div>
+</div>
+<p>Herausfinden wer wann etwas geändert hat:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git blame -L 56,58 src/custom.css
+<span class="c"># SHA1   (Autor LN) Content</span>
+77a79bbc <span class="o">(</span>Elch  56<span class="o">)</span> background: -webkit-radial-gradient<span class="o">(</span><span class="c">#9cf, #369);</span>
+64ac73cb <span class="o">(</span>Katze 57<span class="o">)</span> background:    -moz-radial-gradient<span class="o">(</span><span class="c">#9cf, #369);</span>
+77a79bbc <span class="o">(</span>Elch  58<span class="o">)</span> background:         radial-gradient<span class="o">(</span><span class="c">#9cf, #369);</span>
+</pre></div>
+</div>
+<p>→ Der Autor <tt class="docutils literal"><span class="pre">Katze</span></tt> ist für den Mozilla-Support zuständig.</p>
+
+</article>
+<article class="slide level-2" id="git-tag">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">tag</span></tt></h2>
+<ul>
+<li><p class="first">Manchmal muss man einen Commit <em>taggen</em>.</p>
+</li>
+<li><p class="first">Wie <tt class="docutils literal"><span class="pre">branches</span></tt>, nur <em>fest</em>.</p>
+</li>
+<li><p class="first">Beispielsweise mit einer Version: <strong>1.2 beta</strong></p>
+<blockquote>
+<div><div class="highlight-bash"><div class="highlight"><pre><span class="c"># Neuen Tag anlegen</span>
+git tag <span class="s2">&quot;1.2 beta&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Alle Tags auflisten</span>
+git tag
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Anderes Tag löschen.</span>
+git tag -d <span class="s2">&quot;1.2 beta&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Tags &quot;veröffentlichen&quot;</span>
+git push origin &lt;<span class="nb">local</span>-tag-name&gt;
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="das-gitflow-branching-modell">
+<h2>Das GitFlow Branching Modell</h2>
+<div class="figure">
+<a class="fill reference internal image-reference" href="_images/gitflow.png"><img alt="_images/gitflow.png" class="fill" src="_images/gitflow.png" style="width: 70%;" /></a>
+</div>
+
+</article>
+<article class="slide level-3" id="id1">
+<h3>---</h3>
+<p>---</p>
+<div class="figure">
+<a class="fill reference internal image-reference" href="_images/yoda.png"><img alt="_images/yoda.png" class="fill" src="_images/yoda.png" style="width: 20%;" /></a>
+</div>
+
+</article>
+<article class="slide level-2" id="tooling">
+<h2>Tooling</h2>
+<p><strong>Plugins</strong></p>
+<ul class="simple">
+<li>GVim Fugitive Plugin</li>
+<li>Eclipse EGit</li>
+<li>Netbeans (bereits integriert)</li>
+</ul>
+<p><strong>Standalone Tools</strong></p>
+<ul class="simple">
+<li>gitg (Linux / Gnome)</li>
+<li>giggle (Portabel / Gnome)</li>
+<li>tig (Linux / ncurses)</li>
+<li>gitk (bereits in git enthalten)</li>
+<li>GitHub Windows Client</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="best-practices-1">
+<h2>Best Practices #1</h2>
+<ul class="build">
+<li><p class="first"><tt class="docutils literal"><span class="pre">.gitignore</span></tt> nutzen (und <tt class="docutils literal"><span class="pre">git</span> <span class="pre">clean</span></tt>!).</p>
+<blockquote>
+<div><ul class="simple">
+<li>Keinen auto generierten Code/Projektdateien committen.</li>
+<li>Wenn nicht vermeidbar dann in eigenen Commit.</li>
+<li>Für Dokumentation am besten eigenen Branch nutzen!</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Sinnvolle Commit-Messages.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Siehe Folie für <tt class="docutils literal"><span class="pre">git</span> <span class="pre">bisect</span> <span class="pre">4</span></tt>.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="best-practices-2">
+<h2>Best Practices #2</h2>
+<ul class="build">
+<li><p class="first">Ein Feature == Ein Commit.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Macht Debugging/Übersicht einfacher.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Review Code before commit.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Keine <tt class="docutils literal"><span class="pre">Fixed</span> <span class="pre">up</span> <span class="pre">previous</span> <span class="pre">commit</span></tt> Messages.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Branches für Features nutzen.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Damit der <tt class="docutils literal"><span class="pre">master</span></tt> branch benutzbar bleibt.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="id2">
+<h2>……</h2>
+<div class="figure">
+<img alt="_images/af.jpg" class="fill" src="_images/af.jpg" />
+</div>
+
+</article>
+<article class="slide level-2" id="git-fetch">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span></tt></h2>
+<ul class="build">
+<li><p class="first"><tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt> ist ein <tt class="docutils literal"><span class="pre">git</span> <span class="pre">fetch</span> <span class="pre">&amp;&amp;</span> <span class="pre">git</span> <span class="pre">merge</span></tt>.</p>
+</li>
+<li><p class="first">Warum sollte man das wollen?</p>
+</li>
+<li><p class="first">Wenn man nicht will dass automatisch gemerged wird.</p>
+</li>
+<li><p class="first">Beispiel:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git fetch origin
+<span class="nv">$ </span>git checkout origin/master
+<span class="nv">$ </span><span class="c"># look around</span>
+<span class="nv">$ </span><span class="c"># if satisfied:</span>
+<span class="nv">$ </span>git checkout master
+<span class="nv">$ </span>git merge origin/master
+</pre></div>
+</div>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="git-rebase-1">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">#1</span></tt></h2>
+<p>Ausgangszustand:</p>
+<a class="reference internal image-reference" href="_images/gitrebase-1.png"><img alt="_images/gitrebase-1.png" class="align-center" src="_images/gitrebase-1.png" style="width: 80%;" /></a>
+
+</article>
+<article class="slide level-2" id="git-rebase-2">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">#2</span></tt></h2>
+<p>Ohne Rebase, mit <tt class="docutils literal"><span class="pre">git</span> <span class="pre">merge</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git checkout master
+<span class="nv">$ </span>git merge experiment
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/gitrebase-2.png"><img alt="_images/gitrebase-2.png" class="align-center" src="_images/gitrebase-2.png" style="width: 80%;" /></a>
+
+</article>
+<article class="slide level-2" id="git-rebase-3">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">#3</span></tt></h2>
+<p>Mit Rebase:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git checkout experiment  <span class="c"># In &#39;experiment&#39; wechseln</span>
+<span class="nv">$ </span>git rebase master        <span class="c"># Basis auf master verschieben</span>
+<span class="nv">$ </span>git checkout master      <span class="c"># In &#39;master&#39; wechseln</span>
+<span class="nv">$ </span>git merge experiment     <span class="c"># Fast-Forward Merge zu &#39;experiment&#39;</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/gitrebase-3.png"><img alt="_images/gitrebase-3.png" class="align-center" src="_images/gitrebase-3.png" style="width: 90%;" /></a>
+
+</article>
+<article class="slide level-3" id="id3">
+<h3>---</h3>
+<p>---</p>
+<div class="figure">
+<img alt="_images/thanksobama.jpg" class="fill" src="_images/thanksobama.jpg" />
+</div>
+
+</article>
+<article class="slide level-2" id="ein-exkurs-zu-storage-as-a-service-mit-git">
+<h2>Ein Exkurs zu Storage as a Service mit <tt class="docutils literal"><span class="pre">git</span></tt></h2>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>SaaS mit <tt class="docutils literal"><span class="pre">git-annex</span></tt>: <a class="reference internal" href="git-annex.html#git-annex"><em>Git Annex: Dropbox fuer Harte</em></a></p>
+
+</article>
+
+
+</section>
+  </body>
+</html>
