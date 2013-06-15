@@ -336,7 +336,7 @@ Entfernte Repositories verwalten:
 
 .. image:: /_static/push.jpg
     :align: center
-    :width: 55%
+    :width: 45%
 
 ------------
 ``git pull``
