@@ -19,7 +19,7 @@ Together:
 
 ✓ Haferkekse besorgen.
 + Aktuelle Version von VM vor dem Vortrag uppen und auf Usb-Sticks kopieren
-+ In der FH Probe vortragen + Raspberry Re-Check
+✓ In der FH Probe vortragen + Raspberry Re-Check
 + Ausdrucken:
   
   + Paper (Notizen drauf machen)
@@ -28,7 +28,7 @@ Together:
 
 + VM:
 
-    + minimale vim config vlt?
+    ✓ minimale vim config vlt?
 
        ✓ syntax on               " syntax highlighting
        ✓ filetype indent on      " activates indenting for files
@@ -44,6 +44,6 @@ Together:
 
     ✓ git colors?
 
-        git config --global color.ui auto
+       ✓ git config --global color.ui auto
 
     + Schauen dass alles up-to-date ist.
