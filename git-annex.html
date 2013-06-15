@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Git Annex: Dropbox fuer Harte &mdash; git-und-die-wolke 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    <link rel="top" title="git-und-die-wolke 0.1 documentation" href="index.html" />
+    <link rel="next" title="Github: Ab in die Wolke" href="github.html" />
+    <link rel="prev" title="Git Basics: Ab in die Shell" href="git-basics.html" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="git-annex-dropbox-fuer-harte">
+<span id="git-annex"></span><h1>Git Annex: Dropbox fuer Harte</h1>
+<div class="figure">
+<img alt="_images/gitcloud.png" class="fill" src="_images/gitcloud.png" />
+</div>
+
+</article>
+<article class="slide level-2" id="git-annex-dropbox-for-geeks">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">annex</span></tt> - Dropbox for geeks</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/gylfie.png"><img alt="_images/gylfie.png" class="align-center" src="_images/gylfie.png" style="width: 400px;" /></a>
+
+</article>
+<article class="slide level-2" id="was-ist-git-annex">
+<h2>Was ist <tt class="docutils literal"><span class="pre">git-annex?</span></tt></h2>
+<p><strong>Problem:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Git eignet sich aufgrund seiner Funktionsweise nur bedingt für große
+Dateien</li>
+<li>Großen Dateien → hoher Ressourcenverbrauch</li>
+</ul>
+</div></blockquote>
+<p><strong>Abhilfe: annex</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Ein Wrapper um <tt class="docutils literal"><span class="pre">git</span></tt> herum, der git <em>,,aufbohrt''</em></li>
+<li>Nur Metadaten werden verwaltet</li>
+<li>Content wird nicht <em>,,getrackt''</em>, git Features weiterhin vorhanden</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="wie-funktioniert-das-ganze-1">
+<h2>Wie funktioniert das Ganze? #1</h2>
+<p><strong>Repository anlegen</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir annex
+<span class="nv">$ </span><span class="nb">cd </span>annex
+<span class="nv">$ </span>git init .
+Initialized empty Git repository in /home/christoph/annex/.git/
+
+<span class="nv">$ </span>git annex init <span class="s1">&#39;repo on desktop&#39;</span>
+init repo on desktop ok
+<span class="o">(</span>Recording state in git...<span class="o">)</span>
+</pre></div>
+</div>
+<p><strong>Files hinzufügen</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cp ~/debian-7.0.0-amd64-netinst.iso .
+<span class="nv">$ </span>git annex add .
+add debian-7.0.0-amd64-netinst.iso <span class="o">(</span>checksum...<span class="o">)</span> ok
+add wallpaper-279066f0.jpg <span class="o">(</span>checksum...<span class="o">)</span> ok
+<span class="o">(</span>Recording state in git...<span class="o">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="wie-funktioniert-das-ganze-2">
+<h2>Wie funktioniert das Ganze? #2</h2>
+<p><strong>Dateien commiten.</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git commit -am <span class="s1">&#39;files added.&#39;</span>
+<span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 1dcad58<span class="o">]</span> files added.
+2 files changed, 2 insertions<span class="o">(</span>+<span class="o">)</span>
+create mode 120000 debian-7.0.0-amd64-netinst.iso
+create mode 120000 wallpaper-279066f0.jpg
+</pre></div>
+</div>
+<p>Und nun? Let's sync!</p>
+
+</article>
+<article class="slide level-2" id="wie-funktioniert-das-ganze-3">
+<h2>Wie funktioniert das Ganze? #3</h2>
+<p><strong>Dateien synchronisieren</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone /home/christoph/annex/
+Cloning into <span class="s1">&#39;annex&#39;</span>...
+<span class="k">done</span>.
+
+<span class="nv">$ </span><span class="nb">cd </span>annex
+<span class="nv">$ </span>ls
+debian-7.0.0-amd64-netinst.iso  wallpaper-279066f0.jpg
+<span class="nv">$ </span>feh wallpaper-279066f0.jpg
+feh WARNING: wallpaper-279066f0.jpg does not exist - skipping
+feh: No loadable images specified.
+See <span class="s1">&#39;feh --help&#39;</span> or <span class="s1">&#39;man feh&#39;</span> <span class="k">for </span>detailed usage information
+
+<span class="nv">$ </span>git annex get wallpaper-279066f0.jpg
+get wallpaper-279066f0.jpg <span class="o">(</span>merging origin/git-annex into git-annex...<span class="o">)</span>
+<span class="o">(</span>Recording state in git...<span class="o">)</span>
+<span class="o">(</span>from origin...<span class="o">)</span> ok
+<span class="o">(</span>Recording state in git...<span class="o">)</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="git-annex-features">
+<h2><tt class="docutils literal"><span class="pre">git</span> <span class="pre">annex</span></tt> Features</h2>
+<blockquote>
+<div><ul class="simple">
+<li>Location Tracking</li>
+<li>Future Proofing</li>
+<li>Backup Copies</li>
+<li>Special Remotes</li>
+<li>Transfering Data</li>
+<li>Distributed Version Control</li>
+</ul>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/annex.png"><img alt="_images/annex.png" class="align-center" src="_images/annex.png" style="width: 200px;" /></a>
+
+</article>
+<article class="slide level-2" id="alles-okay">
+<h2>Alles okay?</h2>
+<p><strong>njaaaa</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Noch recht stark in der Entwicklung</li>
+<li>Im Moment hauptsächlich was für Geeks</li>
+</ul>
+</div></blockquote>
+<p><strong>Aber</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Abhilfe in Arbeit →  Webfrontend</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="warum-uberhaupt-das-ganze-es-gibt-doch-dropbox">
+<h2>Warum überhaupt das Ganze, es gibt doch Dropbox?</h2>
+<p><strong>Interessante Features die es bisher so nicht gibt:</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Verschiedene <em>,,cloud remotes''</em> nutzbar z.B. <tt class="docutils literal"><span class="pre">box.com</span></tt>, <tt class="docutils literal"><span class="pre">rsync.net</span></tt>, <tt class="docutils literal"><span class="pre">Amazon</span> <span class="pre">S3</span></tt></li>
+<li>Kontrolle liegt beim Benutzer, nicht Storage Anbieter - interessant für
+Unternehmen mit kritischen Daten.</li>
+<li>Verschlüsselung, Vertrauensstufen, Sharing etc.</li>
+<li>Verschiedene ,,Repository Groups'' definierbar und kombinierbar →
+verschiedene Szenarien abdeckbar.</li>
+<li>Praktisch viele Features die man von einer gutem Storage-Lösung erwartet</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="power-of-git-annex-for-everybody">
+<h2>Power of git-annex for everybody</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<center><b>Frontend Demo + <a href="http://downloads.kitenet.net/videos/git-annex/git-annex-xmpp-pairing.ogv">Dropbox usage Video</a></b></center><div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/annex.png"><img alt="_images/annex.png" class="align-center" src="_images/annex.png" style="width: 200px;" /></a>
+
+</article>
+<article class="slide level-2" id="nun-zum-kernthema-des-vortrags">
+<h2>Nun zum Kernthema des Vortrags</h2>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<p>Code Hosting mit Github: <a class="reference internal" href="github.html#github"><em>Github: Ab in die Wolke</em></a></p>
+
+</article>
+
+
+</section>
+  </body>
+</html>
