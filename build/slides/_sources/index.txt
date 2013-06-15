@@ -18,3 +18,14 @@ Inhalt
    git-annex
    github
    uebung
+
+**Wichtiger Hinweis zur VM**
+
+* VirtualBox Debian VM Downloadlink: 
+    
+    * Download: `Google Drive
+      <https://docs.google.com/file/d/0Bzwouwe20PM6Z2wwTmwzNmoxTWs/edit?usp=sharing>`_
+    * Mirror:   `Private Mirror
+      <http://up.nullcat.de/downloads/debian.ova>`_
+
+* VM auf D: Festplatte speichern
