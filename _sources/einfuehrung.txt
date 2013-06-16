@@ -61,6 +61,13 @@ Early-Adaptors-Umfrage
 
     <center><b>Wer hat schonmal git oder ein dvcs genutzt?</b></center>
 
+Wozu git?
+---------
+
+.. figure:: /_static/finaldoc.gif
+   :width: 70%
+   :align: center
+
 
 Warum git? Warum nicht X?
 -------------------------
